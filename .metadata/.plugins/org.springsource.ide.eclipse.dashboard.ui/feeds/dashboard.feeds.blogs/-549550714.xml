@@ -5,7 +5,30 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-03-10T12:00:00Z</updated>
+  <updated>2022-03-15T18:00:00Z</updated>
+  <entry>
+    <title>This Week in Spring - March 15th, 2022</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/15/this-week-in-spring-march-15th-2022" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2022-03-15:4729</id>
+    <updated>2022-03-15T18:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;ve got a good amount of stuff to get to this week so let&amp;rsquo;s dive right in! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/09/introducing-spring-cloud-alibaba-2021-0-1-0"&gt;Introducing Spring Cloud Alibaba 2021.0.1.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In this installment of &lt;a href="https://spring.io/blog/2022/03/09/spring-tips-hilla-an-amazing-new-web-framework-from-vaadin"&gt;Spring Tips, I look at Hilla, an amazing new web framework from Vaadin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/10/a-bootiful-podcast-microsoft-azure-developer-advocate-mark-heckler"&gt;A Bootiful Podcast: Microsoft Azure Developer Advocate Mark Heckler&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;OG Cloud-Native &lt;a href="https://twitter.com/ciberkleid/status/1503731967694716938?s=12"&gt;Cora Iberkleid put together a really nice look on how to get resources in Kubernetes to &amp;ldquo;explain themselves&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/toedter/spring-hateoas-jsonapi/"&gt;Kai Tödter announced that he&amp;rsquo;s released version 1.3.0 of JSON:API for Spring HATEOAS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I&amp;rsquo;m honored to be counted among many amazing folks in this list of &lt;a href="https://www.ecairn.com/blog/top-100-influencers-devrel"&gt;The Top 100 Influencers in #DevRel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1502004973655126022"&gt; Binaries for #OpenJDK 11.0.14.1 are out. This release addresses an issue with the HttpClient API in Java SE that missed a patch during the release of 11.0.14. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In this video, Dan Vega looks at what&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=4L4LEnawcO8"&gt;new in Spring Boot 2.6&lt;/a&gt;. Dan just recently &lt;a href="https://www.youtube.com/watch?v=TYXdX-EakG8"&gt;joined our team!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;write &lt;a href="https://www.youtube.com/watch?v=ndIXyLG_Y1U"&gt;your first Spring Batch Tasklet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Microsoft Azure Developer Advocate Mark Heckler</title>
     <link rel="alternate" href="https://spring.io/blog/2022/03/10/a-bootiful-podcast-microsoft-azure-developer-advocate-mark-heckler" />
@@ -340,19 +363,6 @@
   &lt;li&gt;Spring Session Hazelcast &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Session MongoDB &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: easy IOT integration with HiveMQ, Spring Integration MQTT, and Spring Native</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/02/23/spring-tips-easy-iot-integration-with-hivemq-spring-integration-mqtt-and-spring-native" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-02-23:4708</id>
-    <updated>2022-02-23T08:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment I&amp;rsquo;m joined by my friend, fellow Java Champion, and Developer Advocate at &lt;a href="https://www.hivemq.com/"&gt;HiveMQ&lt;/a&gt;, &lt;a href="https://twitter.com/mgrygles"&gt;Mary Grygleski (@mgrygles)&lt;/a&gt;, and we look at easy Internet of Things (IOT) integration with HiveMQ, Spring Integration MQTT, Spring Boot, and Spring Native&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/o8MgZ1C7V6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
