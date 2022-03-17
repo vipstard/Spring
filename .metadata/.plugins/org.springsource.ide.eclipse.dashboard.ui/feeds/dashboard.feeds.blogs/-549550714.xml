@@ -5,7 +5,53 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-03-15T18:00:00Z</updated>
+  <updated>2022-03-16T17:54:24Z</updated>
+  <entry>
+    <title>Spring Tools 4.14.0 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/16/spring-tools-4-14-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2022-03-16:4731</id>
+    <updated>2022-03-16T17:54:24Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.14.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;&lt;h4&gt;&lt;a href="#major-changes-to-the-spring-tools-4-for-eclipse-distribution" class="anchor" name="major-changes-to-the-spring-tools-4-for-eclipse-distribution"&gt;&lt;/a&gt;major changes to the Spring Tools 4 for Eclipse distribution&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;updated to Eclipse 2022-03 release (&lt;a href="https://www.eclipse.org/eclipseide/2022-03/"&gt;new and noteworthy&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;&lt;a href="#fixes-and-improvements" class="anchor" name="fixes-and-improvements"&gt;&lt;/a&gt;fixes and improvements&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: VSCode Spring boot tools 1.30.0 error trying to find JVM (&lt;a href="https://github.com/spring-projects/sts4/issues/726"&gt;#726&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: vscode &amp;ldquo;Problems&amp;rdquo; diagnostic entries lack &amp;ldquo;source&amp;rdquo; field (&lt;a href="https://github.com/spring-projects/sts4/issues/725"&gt;#725&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: orphan vscode extension processes left running (&lt;a href="https://github.com/spring-projects/sts4/issues/704"&gt;#704&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: deadlock in language server process avoids process to be shutdown (&lt;a href="https://github.com/spring-projects/sts4/issues/741"&gt;#741&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: Outline View is broken again on Windows (&lt;a href="https://github.com/spring-projects/sts4/issues/742"&gt;#742&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: boot-java.live-information.automatic-tracking.on is not working on vscode (&lt;a href="https://github.com/spring-projects/sts4/issues/733"&gt;#733&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(VSCode)&lt;/em&gt; fixed: Java 17 is mis-identified as Java 8 (&lt;a href="https://github.com/spring-projects/sts4/issues/713"&gt;#713&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: Deadlock with Spring LSP in Eclipse 4.23 with STS 4.23 nightlies (&lt;a href="https://github.com/spring-projects/sts4/issues/729"&gt;#729&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2022-03-16-4140-release-incl-language-servers-version-1320"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2022-03-16-4140-release-incl-language-servers-version-1320&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.14.1 is scheduled to be released in late April 2022.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: Spring Shell and Spring Native</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/16/spring-tips-spring-shell-and-spring-native" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2022-03-15:4730</id>
+    <updated>2022-03-16T07:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; looks at the joy of writing fast, native CLI applications with Spring Boot, Spring Shell, GraalVM, and Spring Native&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6Os6nL7TtAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - March 15th, 2022</title>
     <link rel="alternate" href="https://spring.io/blog/2022/03/15/this-week-in-spring-march-15th-2022" />
@@ -322,47 +368,6 @@
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.10"&gt;52 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.10/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Batch 4.3.5 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/02/23/spring-batch-4-3-5-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mahmoud Ben Hassine</name>
-    </author>
-    <id>tag:spring.io,2022-02-25:4714</id>
-    <updated>2022-02-23T21:09:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Batch 4.3.5 has been released to Maven Central repository. This patch release comes with a number of bug fixes, enhancements and dependency updates. You can find the complete change logs here: &lt;a href="https://github.com/spring-projects/spring-batch/releases/tag/4.3.5"&gt;4.3.5&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I would like to thank all contributors who had a role in this release!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on Github&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/docs/current/reference/html/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session 2021.0.5 and 2021.1.2 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/02/23/spring-session-2021-0-5-and-2021-1-2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Eleftheria Stein-Kousathana</name>
-    </author>
-    <id>tag:spring.io,2022-02-23:4709</id>
-    <updated>2022-02-23T11:00:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team, I’m pleased to announce the release of Spring Session &lt;code&gt;2021.0.5&lt;/code&gt; and &lt;code&gt;2021.1.2&lt;/code&gt;. These releases deliver bug fixes and dependency upgrades.&lt;br/&gt;For your convenience, Spring Boot will pick up these artifacts with its upcoming releases.&lt;/p&gt;
-&lt;p&gt;The following modules were updated as part of &lt;code&gt;2021.0.5&lt;/code&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Session Core &lt;code&gt;2.5.5&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.5.5"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session Data Redis &lt;code&gt;2.5.5&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.5.5"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session JDBC &lt;code&gt;2.5.5&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.5.5"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session Hazelcast &lt;code&gt;2.5.5&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.5.5"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The following modules were updated as part of &lt;code&gt;2021.1.2&lt;/code&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Session Core &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session Data Redis &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session JDBC &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session Hazelcast &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Session MongoDB &lt;code&gt;2.6.2&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/2.6.2"&gt;release notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

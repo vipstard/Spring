@@ -35,7 +35,7 @@
    <%for(int i=0; i<list.size(); i++){ %>
      <tr>
       <td><%=list.get(i).getIdx() %></td>
-      <td><%=list.get(i).getTitle() %></td>
+      <td><a href="/myapp/boardContent.do?idx=<%=list.get(i).getIdx()%>"><%=list.get(i).getTitle() %></a></td>
       <td><%=list.get(i).getContent() %></td>
       <td><%=list.get(i).getWriter() %></td>
       <td><%=list.get(i).getIndate() %></td>
@@ -43,7 +43,11 @@
       
    </tr>
    <%} %>
-   
+   <tr>
+   		<td colspan="5">
+   			<button class="btn btn-success btn-sm" onclick="location.href='/myapp/boardForm.do'">글쓰기</button>
+   		</td>
+   </tr>
 </table>
 
 </div>
