@@ -19,5 +19,8 @@ public interface BoardMapper {
 	//특정 게시물 번호를 가진 게시물 삭제
 	@Delete ("delete from springboard where idx=#{idx}")
 	public void boardDelete(int idx);
+	
+	//특정 게시물 번호를 가진 게시물 수정
+	public void boardUpdate(Board vo);
 
 }
