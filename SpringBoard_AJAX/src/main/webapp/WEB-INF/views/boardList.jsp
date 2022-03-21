@@ -26,6 +26,7 @@
 			<div class="panel-footer">지능형 IoT융합 SW전문가 과정</div>
 		</div>
 	</div>
+	
 	<script>
 $(document).ready(()=>{
 	   loadList()
@@ -77,14 +78,16 @@ $(document).ready(()=>{
 			   result += "</table>"
 			   $(".panel-body").html(result)
 	}
+	
 	function updateCt(idx){
 		var content = $('#c'+idx).val()
 		
 		$.ajax({
 	      url : "/myapp1/boardContentUpdate.do",
 	      type : "post",
-	      data: {"idx":idx, "content":content}, //보내줄 데이터
-	      success : //다시 리스트 보여지도록,
+	      data: JSON.stringify({"idx":idx, "content":content}), //보내줄 데이터
+	      contentType: "application/json",
+	      success : loadList, //다시 리스트 보여지도록,
 	      error : function(){
 	         alert("error")
       }

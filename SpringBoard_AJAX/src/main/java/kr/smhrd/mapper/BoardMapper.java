@@ -1,5 +1,6 @@
 package kr.smhrd.mapper;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.annotations.Delete;
 
@@ -22,5 +23,8 @@ public interface BoardMapper {
 	
 	//특정 게시물 번호를 가진 게시물 수정
 	public void boardUpdate(Board vo);
+	
+	//특정 게시글 수정
+	public void boardContentUpdate(HashMap<String, Object> map);
 
 }

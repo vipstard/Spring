@@ -13,7 +13,7 @@
 		select * from springboard where idx=#{idx}
 	</select>
 	
-	<update id="boardUpdate" parameterType="kr.smhrd.domain.Board">
-		update springboard set title=#{title}, content=#{content} where idx=#{idx}
+	<update id="boardContentUpdate" parameterType="hashMap">
+		update springboard set content=#{content} where idx=#{idx}
 	</update>
 </mapper>

@@ -1,6 +1,7 @@
 package kr.smhrd.myapp1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,11 +36,9 @@ public class BoardController {
 	//@ResponseBody : 자바 객체는 HTTP 응답객체로 변환주는데 사용
 	@RequestMapping("/boardList.do")
 	@ResponseBody
-	
 	public ArrayList<Board> boardList(){
 		ArrayList<Board> list = mapper.boardList();
 		return list;
-		
 	}
 	
 	//boardContentUpdate.do
@@ -48,5 +48,13 @@ public class BoardController {
 	//springboard 수정 추상메서드 interface 작성
 	//sql작성 - xml
 	//응답 데이터 x
+	
+	@RequestMapping(value="/boardContentUpdate.do", method=RequestMethod.POST)
+	@ResponseBody
+	public void boardContentUpdate(@RequestBody HashMap<String, Object> map) {
+		mapper.boardContentUpdate(map);
+		
+		
+	}
 	
 }
