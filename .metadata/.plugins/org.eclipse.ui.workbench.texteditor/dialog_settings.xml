@@ -8,6 +8,8 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="   result+=&quot;&lt;td&gt;번호&lt;/td&gt;&quot;"/>
+			<item value="`"/>
 			<item value="Gson"/>
 		</list>
 		<list key="replacehistory">
