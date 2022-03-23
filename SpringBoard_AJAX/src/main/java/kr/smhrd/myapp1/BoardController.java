@@ -35,8 +35,7 @@ public class BoardController {
 	
 	//@ResponseBody : 자바 객체는 HTTP 응답객체로 변환주는데 사용
 	@RequestMapping("/boardList.do")
-	@ResponseBody
-	public ArrayList<Board> boardList(){
+	public @ResponseBody ArrayList<Board> boardList(){
 		ArrayList<Board> list = mapper.boardList();
 		return list;
 	}
@@ -49,12 +48,35 @@ public class BoardController {
 	//sql작성 - xml
 	//응답 데이터 x
 	
-	@RequestMapping(value="/boardContentUpdate.do", method=RequestMethod.POST)
-	@ResponseBody
-	public void boardContentUpdate(@RequestBody HashMap<String, Object> map) {
-		mapper.boardContentUpdate(map);
+	/*
+	 * @RequestMapping(value="/boardContentUpdate.do", method=RequestMethod.POST)
+	 * 
+	 * @ResponseBody public void boardContentUpdate(@RequestBody HashMap<String,
+	 * Object> map) { mapper.boardContentUpdate(map);
+	 * 
+	 * 
+	 * }
+	 */
+	
+	
+	@RequestMapping("/boardContentUpdate.do")
+	public @ResponseBody void boardContentUpdate(Board vo) {
+		mapper.boardContentUpdate(vo);
 		
 		
 	}
+	
+	@RequestMapping("/boardInsert.do")
+	public @ResponseBody void boardInsert(Board vo) {
+		mapper.boardInsert(vo);
+		
+	}
+	
+	@RequestMapping("/boardTWUpdate.do")
+	public @ResponseBody void boardTWUpdate(Board vo) {
+		mapper.boardTWUpdate(vo);
+		
+	}
+	
 	
 }

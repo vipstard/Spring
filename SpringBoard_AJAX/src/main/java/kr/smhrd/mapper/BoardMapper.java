@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Update;
 
 import kr.smhrd.domain.Board;
 
@@ -11,20 +12,20 @@ public interface BoardMapper {
 	//전체 게시물 가지고오기
 	public ArrayList<Board> boardList();
 	
-	//게시물 작성
+	
+	
+	//	특정 게시글 수정
+	//public void boardContentUpdate(HashMap<String, Object> map);
+	/*
+	 * @Update("update springboard set content=#{content} where idx=#{idx}") public
+	 * void boardContentUpdate(Board vo);
+	 */
+	
+	public void boardContentUpdate(Board vo);
+	
 	public void boardInsert(Board vo);
 	
-	//특정 게시물 번호를 가진 게시물정보 가지고 오기
-	public Board boardContent(int idx);
+	public void boardTWUpdate(Board vo);
 	
-	//특정 게시물 번호를 가진 게시물 삭제
-	@Delete ("delete from springboard where idx=#{idx}")
-	public void boardDelete(int idx);
 	
-	//특정 게시물 번호를 가진 게시물 수정
-	public void boardUpdate(Board vo);
-	
-	//특정 게시글 수정
-	public void boardContentUpdate(HashMap<String, Object> map);
-
 }
