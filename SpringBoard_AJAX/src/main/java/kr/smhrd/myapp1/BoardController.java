@@ -25,58 +25,14 @@ import kr.smhrd.mapper.BoardMapper;
 @Controller
 public class BoardController {
 	
-	@Autowired
-	private BoardMapper mapper;
 	
 	@RequestMapping("/")	//127.0.0.1:8081/myapp1/
 	public String main() {
 		return "boardList";
 	}
 	
-	//@ResponseBody : 자바 객체는 HTTP 응답객체로 변환주는데 사용
-	@RequestMapping("/boardList.do")
-	public @ResponseBody ArrayList<Board> boardList(){
-		ArrayList<Board> list = mapper.boardList();
-		return list;
-	}
-	
-	//boardContentUpdate.do
-	//메서드 이름은 boardContentUpdate
-	//매개변수 작성
-	//@ResponseBody 작성
-	//springboard 수정 추상메서드 interface 작성
-	//sql작성 - xml
-	//응답 데이터 x
-	
-	/*
-	 * @RequestMapping(value="/boardContentUpdate.do", method=RequestMethod.POST)
-	 * 
-	 * @ResponseBody public void boardContentUpdate(@RequestBody HashMap<String,
-	 * Object> map) { mapper.boardContentUpdate(map);
-	 * 
-	 * 
-	 * }
-	 */
 	
 	
-	@RequestMapping("/boardContentUpdate.do")
-	public @ResponseBody void boardContentUpdate(Board vo) {
-		mapper.boardContentUpdate(vo);
-		
-		
-	}
-	
-	@RequestMapping("/boardInsert.do")
-	public @ResponseBody void boardInsert(Board vo) {
-		mapper.boardInsert(vo);
-		
-	}
-	
-	@RequestMapping("/boardTWUpdate.do")
-	public @ResponseBody void boardTWUpdate(Board vo) {
-		mapper.boardTWUpdate(vo);
-		
-	}
 	
 	
 }

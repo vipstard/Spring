@@ -27,5 +27,6 @@ public interface BoardMapper {
 	
 	public void boardTWUpdate(Board vo);
 	
-	
+	@Delete ("delete from springboard where idx=#{idx}")
+	public void boardDelete(Board vo);
 }

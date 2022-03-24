@@ -9,6 +9,7 @@ create table springboard(
 	
 );
 
+alter table springboard add memId varchar2(20);
 
 create sequence sboard_seq
 start with 1
@@ -21,3 +22,19 @@ insert into springboard(idx,title,content,writer) values (sboard_seq.nextval, '�
 insert into springboard(idx,title,content,writer) values (sboard_seq.nextval, '제목2', '내용2', '강예진');
 
 select * from SPRINGBOARD
+
+-- Membber 테이블 생성
+create table springmember(
+	memId varchar2(20) not null,
+	memPw varchar2(20) not null,
+	memUser varchar2(20) not null,
+	constraint pk_sm primary key(memId)
+	
+)
+
+select * from SPRINGMEMBER
+
+insert into springmember values ('smhrd1', 'smhrd1', '강예진1');
+insert into springmember values ('smhrd2', 'smhrd2', '강예진2');
+insert into springmember values ('smhrd3', 'smhrd3', '강예진3');
+
