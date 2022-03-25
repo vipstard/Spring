@@ -63,4 +63,6 @@ public class BoardService {
 		public  void boardDelete(Board vo) {
 			mapper.boardDelete(vo);
 		}
+		
+		
 }

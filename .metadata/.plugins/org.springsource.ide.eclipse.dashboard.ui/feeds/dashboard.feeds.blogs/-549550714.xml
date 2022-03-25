@@ -5,7 +5,115 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-03-23T22:08:00Z</updated>
+  <updated>2022-03-25T00:30:00Z</updated>
+  <entry>
+    <title>Spring Boot 3.0.0-M2 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-3-0-0-m2-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2022-03-25:4747</id>
+    <updated>2022-03-25T00:30:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;3.0.0-M2&lt;/code&gt; has been released and is now available from &lt;a href="https://repo.spring.io/milestone"&gt;https://repo.spring.io/milestone&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v3.0.0-M2"&gt;50 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Notable new features include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reinstated Support for EhCache 3&lt;/li&gt;
+  &lt;li&gt;Reinstated Support for H2 Console&lt;/li&gt;
+  &lt;li&gt;Improved @ConstructorBinding Detection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0.0-M2-Release-Notes"&gt;release notes&lt;/a&gt; for more details and upgrade instructions.&lt;/p&gt;
+&lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/3.0.0-M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.7.0-M3 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-2-7-0-m3-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2022-03-25:4746</id>
+    <updated>2022-03-25T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.7.0-M3&lt;/code&gt; has been released and is now available from &lt;a href="https://repo.spring.io/milestone"&gt;https://repo.spring.io/milestone&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.7.0-M3"&gt;over 90 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Notable new features include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for generating Docker images with Podman&lt;/li&gt;
+  &lt;li&gt;Improved &lt;code&gt;SanitizingFunction&lt;/code&gt; support&lt;/li&gt;
+  &lt;li&gt;Spring GraphQL 1.0.0-M6 support, including the new GraphQL client&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7.0-M3-Release-Notes"&gt;release notes&lt;/a&gt; for more details and upgrade instructions.&lt;/p&gt;
+&lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.7.0-M3/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.6.5 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-2-6-5-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2022-03-24:4745</id>
+    <updated>2022-03-24T15:34:02Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.6.5&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.6.5"&gt;66 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.6.5/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.5.11 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-2-5-11-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2022-03-24:4744</id>
+    <updated>2022-03-24T13:48:43Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.5.11&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.11"&gt;56 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.11/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Authorization Server 0.2.3 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-authorization-server-0-2-3-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2022-03-24:4743</id>
+    <updated>2022-03-24T13:00:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce the general availability of Spring Authorization Server 0.2.3.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can download it from Maven Central by using the module coordinates:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile 'org.springframework.security:spring-security-oauth2-authorization-server:0.2.3'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-authorization-server/releases/tag/0.2.3"&gt;release notes&lt;/a&gt; for complete details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To get started using Spring Authorization Server, see the &lt;a href="https://github.com/spring-projects/spring-authorization-server/tree/main/samples"&gt;sample&lt;/a&gt; to become familiar with setup and configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We would love to gather your feedback as we strive to improve and build upon this release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-authorization-server"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-authorization-server/issues"&gt;GitHub Issues&lt;/a&gt; |  &lt;a href="https://app.zenhub.com/workspaces/authorization-server-5e8f3182b5e8f5841bfc4902/board?repos=248032165"&gt;ZenHub Board&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Batch 5.0 M2 available now</title>
     <link rel="alternate" href="https://spring.io/blog/2022/03/23/spring-batch-5-0-m2-available-now" />
@@ -138,8 +246,8 @@ Customer[id=3, name=Amey]
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
-    <title>Spring Tips:</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/23/spring-tips" />
+    <title>Spring Tips: Multitenant JDBC</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/03/23/spring-tips-multitenant-jdbc" />
     <category term="engineering" label="Engineering" />
     <author>
       <name>Josh Long</name>
@@ -507,95 +615,6 @@ Mono&amp;lt;Project&amp;gt; projectMono = graphQlClient.document(document)&#xD;
 &lt;p&gt;&lt;a href="https://spring.io/blog/2022/02/18/spring-cloud-2021-0-1-has-been-released"&gt;Spring Cloud 2021.0.1&lt;/a&gt; and &lt;a href="https://spring.io/blog/2022/01/20/spring-boot-2-6-3-is-now-available"&gt;Spring Boot 2.6.3&lt;/a&gt;. Major upgrades have been made to many components, including the registration configuration center, distributed messages, flow control, and others.&lt;br/&gt;​&lt;br/&gt;- &lt;a href="https://github.com/alibaba/nacos"&gt;&lt;strong&gt;Nacos&lt;/strong&gt;&lt;/a&gt;: Upgrade the Nacos client to version 1.4.2, fix the related problems in Nacos 1.4.1, and support the Nacos service discovery failure and fault tolerance.&lt;br/&gt;- &lt;a href="https://github.com/apache/rocketmq"&gt;&lt;strong&gt;RocketMQ&lt;/strong&gt;&lt;/a&gt;: Upgraded to 4.9.2, and the separate branch of RocketMQ in the previous project has been integrated into the main branch of the project. It is now released and iterated along with the major version, so that users can directly use the batch messages and asynchronous support newly supported by RocketMQ in the latest Spring Cloud Alibaba. There are many new features, such as message callback processing and the specified consumption start bit in Push mode.&lt;br/&gt;- &lt;a href="https://github.com/alibaba/Sentinel"&gt;&lt;strong&gt;Sentinel&lt;/strong&gt;&lt;/a&gt;: Upgraded to 1.8.3. In addition to fixing some problems in previous versions, it also provides flexible flow control rules capabilities for FeignClient, supports the configuration of default fuse rules for the global FeignClient, supports the configuration of specific flow control rules for a single FeignClient, and supports configuring flow control rules and other capabilities for a single method.&lt;br/&gt;- &lt;strong&gt;Spring Boot:&lt;/strong&gt; On the basis of Spring Boot 2.6.3, the application configuration method of spring.config.import is supported, which is convenient for users to configure and use the Nacos configuration center in the application in a more friendly way.&lt;br/&gt;​&lt;br/&gt;In addition to component upgrades, many problems existing in previous versions have also been fixed, further improving the stability and robustness of Spring Cloud Alibaba. For more information, see the &lt;a href=""&gt;release notes&lt;/a&gt;. For upgrade steps and usage examples of new features, see &lt;a href="https://github.com/alibaba/spring-cloud-alibaba/blob/2021.x/spring-cloud-alibaba-docs/src/main/asciidoc/sca-upgrade-guide.adoc"&gt;https://github.com/alibaba/spring-cloud-alibaba/blob/2021.x/spring-cloud-alibaba-docs/src/main/asciidoc/sca-upgrade-guide.adoc&lt;/a&gt;.&lt;br/&gt;​&lt;br/&gt;​&lt;/p&gt;&lt;h3&gt;&lt;a href="#explanation-of-the-new-version-number" class="anchor" name="explanation-of-the-new-version-number"&gt;&lt;/a&gt;Explanation of the new version number&lt;/h3&gt;
 &lt;p&gt;Since the Spring Cloud version number has undergone a round of changes from the London Underground station name to the naming method beginning with the year, we have found that users inside and outside the community are often confused about the correspondence between Spring Cloud Alibaba and Spring Cloud version numbers. To make it easier for everyone to know the corresponding Spring Cloud version when using Spring Cloud Alibaba in the future, after the discussion among the contributor members of the community at the biweekly meeting, it was decided that, starting from 2021.0.1.0, the Spring Cloud Alibaba version will correspond to the Spring Cloud version. The first three are the Spring Cloud version, and the last one is the extended version. For example, the version number of the first version of Spring Cloud Alibaba corresponding to Spring Cloud 2021.0.1 is 2021.0. 1.0, the second one is 2021.0.1.1.&lt;br/&gt;​&lt;br/&gt;​&lt;/p&gt;&lt;h3&gt;&lt;a href="#in-future" class="anchor" name="in-future"&gt;&lt;/a&gt;In future&lt;/h3&gt;
 &lt;p&gt;After more than three years of rapid development and close cooperation and exchanges with the Spring community, Spring Cloud Alibaba has released a total of &lt;a href="https://github.com/alibaba/spring-cloud-alibaba/releases"&gt;27 versions&lt;/a&gt;. The number of stars on GitHub has exceeded 21,400, the number of forks has reached 6,600, and the number of users has reached 21k, which means that Spring Cloud Alibaba has become one of the most popular microservices frameworks in China.&lt;br/&gt;In the future, Spring Cloud Alibaba will continue to align with the development and evolution of the mainstream versions of Spring Cloud. In the near future, it will support the iteration of Spring Cloud Alibaba &lt;a href="https://github.com/alibaba/spring-cloud-alibaba/tree/2021.x"&gt;2021.x&lt;/a&gt; and &lt;a href="https://github.com/alibaba/spring-cloud-alibaba/tree/2.2.x"&gt;2.2.X&lt;/a&gt;, corresponding to the two current mainstream versions of Spring Cloud 2021.x.x and Hoxton. Apart from that, the community will continue to work hard on the stability and ease of use of components, such as Nacos, Sentinel, and RocketMQ in Alibaba&amp;rsquo;s microservices solutions for Spring Cloud applications, and provide open-source Service Contracts, Label Routing, Grayscale Release, and others for Spring Cloud applications. We support efforts in microservices governance, and we welcome interested friends to join us and do some interesting things together!&lt;br/&gt;​&lt;br/&gt;​&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Hilla, an amazing new web framework from Vaadin</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/09/spring-tips-hilla-an-amazing-new-web-framework-from-vaadin" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-03-07:4724</id>
-    <updated>2022-03-09T08:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of Spring Tips! In this installment we&amp;rsquo;ll look at the new frontend/backend web framework from the fine folks at Vaadin: &lt;a href="https://hilla.dev/"&gt;Hilla&lt;/a&gt;! &lt;/p&gt;
-&lt;p&gt;code is &lt;a href="https://github.com/spring-tips/vaadin-hilla"&gt;available at github.com/spring-tips/vaadin-hilla&lt;/a&gt;&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ADLbkZnKjA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - March 8th, 2022</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/08/this-week-in-spring-march-8th-2022" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-03-08:4725</id>
-    <updated>2022-03-08T17:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re you doin&amp;rsquo;? &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/03/a-bootiful-podcast-reactive-streams-cofounder-former-deputy-cto-at-lightbend-and-legend-viktor-klang"&gt;A Bootiful Podcast: Reactive Streams cofounder, former deputy CTO at Lightbend, and legend Viktor Klang&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/07/announcing-spring-cloud-stream-applications-2021-1-1-ga-release"&gt;Announcing Spring Cloud Stream Applications 2021.1.1 GA Release&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://medium.com/@dhakresumitra5/graphql-with-spring-boot-java-d2fa3ca1b12c"&gt;GraphQL with Spring Boot java&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blogs.oracle.com/javamagazine/post/the-hidden-gems-in-java-16-and-java-17-from-streammapmulti-to-hexformat"&gt;Hidden gems in Java 16 and Java 17, from Stream.mapMulti to HexFormat&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://developer.okta.com/blog/2022/03/03/spring-native-jhipster"&gt;Introducing Spring Native for JHipster: Serverless Full-Stack Made Easy | Okta Developer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/content/webinars/mar-10-getting-started-with-spring-authorization-server"&gt;Mar 10 - Getting Started with Spring Authorization Server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/04/spring-cloud-data-flow-2-10-0-m1-released"&gt;Spring Cloud Data Flow 2.10.0-M1 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/01/spring-cloud-gateway-cve-reports-published"&gt;Spring Cloud Gateway CVE reports published&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/04/spring-cloud-square-0-4-1-has-been-released"&gt;Spring Cloud Square 0.4.1 has been released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/03/02/spring-tips-reliable-database-migrations-with-liquibase-and-spring-boot"&gt;Spring Tips: Reliable Database Migrations with Liquibase and Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I&amp;rsquo;m proud to stand with Ukraine, and it&amp;rsquo;s nice to know my company is too: &lt;a href="https://news.vmware.com/releases/vmware-statement-regarding-ukraine"&gt;VMware Statement Regarding Ukraine ‑ VMware News and Stories&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing Spring Cloud Stream Applications 2021.1.1 GA Release</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/07/announcing-spring-cloud-stream-applications-2021-1-1-ga-release" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Chris Bono</name>
-    </author>
-    <id>tag:spring.io,2022-03-07:4723</id>
-    <updated>2022-03-07T23:51:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I’m happy to announce that Spring Cloud Stream Applications &lt;code&gt;2021.1.1&lt;/code&gt; has been released.&lt;/p&gt;
-&lt;p&gt;This release is based on Spring Boot &lt;code&gt;2.6.3&lt;/code&gt; and Spring Cloud &lt;code&gt;2021.0.1&lt;/code&gt; and contains many improvements and bug fixes - check out the &lt;a href="https://github.com/spring-cloud/stream-applications/releases/tag/v2021.1.1"&gt;release notes&lt;/a&gt; for more information.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;Please continue to engage with us by creating bug reports and feature requests on &lt;a href="https://github.com/spring-cloud/stream-applications"&gt;Github&lt;/a&gt; and asking questions on StackOverflow using the &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;spring-cloud-stream&lt;/a&gt; or &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;spring-cloud-dataflow&lt;/a&gt; tags.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 2.10.0-M1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/04/spring-cloud-data-flow-2-10-0-m1-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Chris Bono</name>
-    </author>
-    <id>tag:spring.io,2022-03-04:4722</id>
-    <updated>2022-03-05T00:55:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I’m happy to announce that Spring Cloud Dataflow &lt;code&gt;2.10.0-M1&lt;/code&gt; has been released and is now available from &lt;a href="https://repo.spring.io/milestone"&gt;https://repo.spring.io/milestone&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This preview release contains many improvements and bug fixes - check out the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.10.0-M1"&gt;release notes&lt;/a&gt; for more information.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-2-10-0-m1" class="anchor" name="notable-changes-in-2-10-0-m1"&gt;&lt;/a&gt;Notable Changes in 2.10.0-M1&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Update to Spring Boot &lt;code&gt;2.6.3&lt;/code&gt; and Spring Cloud &lt;code&gt;2021.0.0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Provide a &lt;a href="https://carvel.dev/"&gt;Carvel&lt;/a&gt; package for easy installation into k8s&lt;/li&gt;
-  &lt;li&gt;Starting from &lt;code&gt;2.10&lt;/code&gt;, dropping support for &lt;code&gt;mysql&lt;/code&gt; database in favour of &lt;code&gt;MariaDB&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Square 0.4.1 has been released</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/04/spring-cloud-square-0-4-1-has-been-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Olga Maciaszek-Sharma</name>
-    </author>
-    <id>tag:spring.io,2022-03-04:4721</id>
-    <updated>2022-03-04T13:00:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the 0.4.1 release of &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square"&gt;Spring Cloud Square&lt;/a&gt; is available today. The release can be found in &lt;a href="https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-square-dependencies/0.4.1/"&gt;Maven Central&lt;/a&gt;. You can check out the 0.4.1 &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/releases/tag/v0.4.1"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This is primarily a bug fix release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-0-4-1" class="anchor" name="notable-changes-in-0-4-1"&gt;&lt;/a&gt;Notable changes in 0.4.1:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for configuring custom &lt;code&gt;WebClient.Builder&lt;/code&gt; beans for non-load-balanced scenarios (&lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/issues/44"&gt;#44&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The documentation for this release can be found &lt;a href="https://spring-projects-experimental.github.io/spring-cloud-square/docs/current/reference/html/index.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

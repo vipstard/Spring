@@ -1,7 +1,16 @@
 		
+		
+		
+		function getContextPath(){
+		var hostIndex = location.href.indexOf(location.host)+location.host.lehth;
+		var contextPath = location.href.substring(hostIndex, location.href.indexOf("/", hostIndex+1))
+		return contextPath
+		}
+		
+		
 		function loadList(){
 	   $.ajax({
-	      url : "/myapp1/boardList.do",
+	      url : getContextPath()+ "boardList.do",
 	      type : "get",
 	      dataType: "json", //json으로 받음
 	      success : htmlView,
@@ -10,56 +19,15 @@
 	      }
 	   })
 	}
-	function htmlView(data){
-		var result = "<table class='table table-bordered table-hover'>"
-			  
-			result += "<tr>"
-				 result += "<th>번호</th>"
-			     result += "<th>제목</th>"
-			     result += "<th>작성자</th>"
-		   	     result += "<th>작성일</th>"
-			     result += "<th>조회수</th>"
-			     result += "</tr>"
-			     
-			   //반복문
-			   $.each(data, (index, vo)=>{
-				   
-				   result += "<tr>"
-					      result += "<td>"+vo.idx+"</td>"
-					      result += "<td id='t"+vo.idx+"'><a href='javascript:contentView("+vo.idx+")'>"+vo.title+"</a></td>"
-					      result += "<td id='w"+vo.idx+"'>"+vo.writer+"</td>"
-					      result += "<td>"+vo.indate+"</td>"
-					      result += "<td>"+vo.count+"</td>"
-					      result += "<td id='u"+vo.idx+"'><button class='btn btn-success btn-sm' onclick='goUpdate("+vo.idx+")'>수정</button></td>"
-					      result += "<td ><button class='btn btn-warning btn-sm' onclick='goDelete("+vo.idx+")'>삭제</button></td>"
-					      result += "</tr>"
-					      result += "<tr style='display:none' id='cv"+vo.idx+"'>"
-					      result += "<td>내용</td>"
-					      result += "<td colspan='4'>"
-					      result += "<textarea rows='6' class='form-control' id='c"+vo.idx+"'>"+vo.content+"</textarea>"
-					      result += "<br>"
-					      result += "<button class='btn-success btn-sm' onclick='updateCt("+vo.idx+")'>수정</button>&nbsp"
-					      result += "<button class='btn-warning btn-sm' onclick='closeCt("+vo.idx+")'>닫기</button>"
-					      result += "</td>"
-					      result += "</tr>"
-			     
-			    
-			   })
-			   result += "<tr>"
-			   result += "<td colspan='5'>"
-			   result += "<brtton class='btn btn-primary btn-sm' onclick='goView()'>글쓰기</button>"
-			   result += "</td>"
-			   result += "</tr>"
-			   result += "</table>"
-			   $("#List").html(result)
-	}
+	
+	
 	
 	/*
 	function updateCt(idx){
 		var content = $('#c'+idx).val()
 		
 		$.ajax({
-	      url : "/myapp1/boardContentUpdate.do",
+	      url : getContextPath()+ "boardContentUpdate.do",
 	      type : "post",
 	      data: JSON.stringify({"idx":idx, "content":content}), //보내줄 데이터
 	      contentType: "application/json",
@@ -76,7 +44,7 @@
 			var content = $('#c'+idx).val()
 			
 			$.ajax({
-		      url : "/myapp1/boardContentUpdate.do",
+		      url : getContextPath()+ "boardContentUpdate.do",
 		      type : "post",
 		      data: {"idx":idx, "content":content}, //보내줄 데이터
 		      success : loadList, //다시 리스트 보여지도록,
@@ -194,6 +162,12 @@ function goDelete(idx){
 	         alert("error")
 	      }
 	   })
+	}
+	
+function logout(){
+	location.href="/myapp1/logout.do"
+
+
 	}
 	
 	
