@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 			<c:if test="${empty LoginVO}">
-				<form class="form-inline" action="/myapp1/login.do" method="post">
+				<form class="form-inline" action="${cpath}/login.do" method="post">
 					<div class="form-group">
 						<label for="memId">ID :</label> 
 						
@@ -127,8 +128,12 @@ function htmlView(data){
 					      result += "<td colspan='4'>"
 					      result += "<textarea rows='6' class='form-control' id='c"+vo.idx+"'>"+vo.content+"</textarea>"
 					      result += "<br>"
+					    	  if(vo.memId == "${LoginVO.memId}"){
 					      result += "<button class='btn-success btn-sm' onclick='updateCt("+vo.idx+")'>수정</button>&nbsp"
 					      result += "<button class='btn-warning btn-sm' onclick='closeCt("+vo.idx+")'>닫기</button>"
+					    	  } else{
+					    		  result += "<button class='btn-warning btn-sm' onclick='closeCt("+vo.idx+")'>닫기</button>"
+					    	  }
 					      result += "</td>"
 					      result += "</tr>"
 			     
