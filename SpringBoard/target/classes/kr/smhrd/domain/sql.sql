@@ -21,3 +21,6 @@ insert into springboard(idx,title,content,writer) values (sboard_seq.nextval, '�
 insert into springboard(idx,title,content,writer) values (sboard_seq.nextval, '제목2', '내용2', '강예진');
 
 select * from SPRINGBOARD
+
+select * from web_member;
+select * from member;
