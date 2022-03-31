@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="login.do"/>
+		<item key="selection" value="8081"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="8181"/>
+			<item value="8082"/>
+			<item value="8081"/>
+			<item value="80"/>
 			<item value="Login.do"/>
 			<item value="수정"/>
 			<item value="id=&apos;u&apos;"/>
@@ -19,9 +23,6 @@
 			<item value="resey"/>
 			<item value="writeUp"/>
 			<item value="panel-body"/>
-			<item value="   result+=&quot;&lt;td&gt;번호&lt;/td&gt;&quot;"/>
-			<item value="`"/>
-			<item value="Gson"/>
 		</list>
 		<list key="replacehistory">
 			<item value="service"/>
