@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="8081"/>
+		<item key="selection" value="삭제"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="삭제"/>
+			<item value="list"/>
+			<item value="List"/>
+			<item value="번호"/>
+			<item value="vo"/>
+			<item value="글쓰기"/>
+			<item value="htmlView"/>
+			<item value="go"/>
+			<item value="configuration"/>
+			<item value="java"/>
+			<item value="5.1.5"/>
+			<item value="a"/>
 			<item value="8181"/>
 			<item value="8082"/>
 			<item value="8081"/>
-			<item value="80"/>
-			<item value="Login.do"/>
-			<item value="수정"/>
-			<item value="id=&apos;u&apos;"/>
-			<item value="글쓰기"/>
-			<item value="wform"/>
-			<item value="mapper"/>
-			<item value="boardDelete"/>
-			<item value="reset"/>
-			<item value="resey"/>
-			<item value="writeUp"/>
-			<item value="panel-body"/>
 		</list>
 		<list key="replacehistory">
 			<item value="service"/>
