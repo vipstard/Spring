@@ -18,7 +18,18 @@
 <div class="container">
   <h2>Spring WEB MVC 게시판</h2>
   <div class="panel panel-default">
-    <div class="panel-heading">Panel Heading</div>
+    <div class="panel-heading">
+				<c:if test="${!empty LoginVo}">
+					<div class="form-group">
+						<label>${LoginVo.name }님 환영합니다.</label>
+						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/LogOut.do'">LogOut</button>
+					</div>
+				</c:if>
+	<c:if test="${empty LoginVo}">
+	<button type="button" class="btn" onclick="location.href='/TEST/JoinForm.do'">Join</button>
+    <button type="button" class="btn" onclick="location.href='/TEST/LoginForm.do'">Login</button>
+    </c:if>
+    </div>
     <div class="panel-body">
     
 	<table class = "table table-bordered table-hover">
@@ -38,11 +49,14 @@
       <td>${vo.count}</td>
    </tr>
    </c:forEach>
+   
+   <c:if test="${!empty LoginVo}">
    <tr>
    		<td colspan="5">
-   			<button class="btn btn-success btn-sm" onclick="location.href='/myapp/boardForm.do'">글쓰기</button>
+   			<button class="btn btn-success btn-sm" onclick="location.href='/TEST/boardForm.do'">글쓰기</button>
    		</td>
    </tr>
+   </c:if>
 </table>
 
 </div>

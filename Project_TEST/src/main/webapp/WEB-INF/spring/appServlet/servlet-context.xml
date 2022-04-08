@@ -22,6 +22,9 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="kr.smhrd.myapp"/>
+	<context:component-scan base-package="kr.smhrd.service"/>
+	
+
 	
 	
 	

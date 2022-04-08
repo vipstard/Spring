@@ -28,7 +28,7 @@ public class BoardController {
 	
 	//게시판리스트 요청받는 메서드
 	//@RequestMapping : 특정 URI로 온 요청 처리 방식 정의
-	@RequestMapping("/boardList")
+	@RequestMapping("/")
 	public String boardList(Model model) {
 		ArrayList<Board> list = mapper.boardList();
 
@@ -90,4 +90,20 @@ public class BoardController {
 		return "redirect:/boardList.do";
 		
 	}
+	
+	
+	//회원가입폼
+	@GetMapping("/JoinForm.do")
+	public String JoinForm() {
+		return "JoinForm";
+			
+	}
+		
+	//로그인폼
+	@GetMapping("/LoginForm.do")
+	public String LoginForm() {
+		return "LoginForm";
+			
+	}
+	
 }

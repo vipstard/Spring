@@ -38,7 +38,7 @@
          <div class="form-group">
           <label class="control-label col-sm-2" for="writer">작성자:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer">
+            <input type="text" class="form-control" id="writer" name="writer" value="${LoginVo.email }" readonly>
           </div>
         </div>
         

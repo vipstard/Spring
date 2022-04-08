@@ -24,3 +24,20 @@ select * from SPRINGBOARD
 
 select * from web_member;
 select * from member;
+
+create table T_Member(
+	idx number not null,
+	name varchar2(100) not null,
+	Nick varchar2(2000) not null,
+	email varchar2(20) not null,
+	address varchar2(20) not null,
+	indate date default sysdate,
+	constraint pk_test_idx primary key(idx)
+);
+
+create sequence TMember_seq
+start with 1
+increment by 1
+maxvalue 100
+cycle
+nocache;
