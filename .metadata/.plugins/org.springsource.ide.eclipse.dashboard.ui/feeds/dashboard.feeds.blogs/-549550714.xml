@@ -5,7 +5,101 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-04-07T20:00:00Z</updated>
+  <updated>2022-04-13T13:00:00Z</updated>
+  <entry>
+    <title>Spring Framework Data Binding Rules Vulnerability (CVE-2022-22968)</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/04/13/spring-framework-data-binding-rules-vulnerability-cve-2022-22968" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Sam Brannen</name>
+    </author>
+    <id>tag:spring.io,2022-04-13:4766</id>
+    <updated>2022-04-13T13:00:00Z</updated>
+    <content type="html">&lt;h2&gt;&lt;a href="#table-of-contents" class="anchor" name="table-of-contents"&gt;&lt;/a&gt;Table of Contents&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#overview"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#does-this-affect-my-application"&gt;Does This Affect My Application?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#reassessing-your-data-binding-approach"&gt;Reassessing Your Data Binding Approach&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#overview" class="anchor" name="overview"&gt;&lt;/a&gt;Overview&lt;/h3&gt;
+&lt;p&gt;While investigating the &lt;a href="https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement"&gt;Spring Framework RCE vulnerability CVE-2022-22965&lt;/a&gt; and the suggested workaround, we realized that the &lt;code&gt;disallowedFields&lt;/code&gt; configuration setting on &lt;code&gt;WebDataBinder&lt;/code&gt; is not intuitive and is not clearly documented. We have fixed that but also decided to be on the safe side and announce a follow-up CVE, in order to ensure application developers are alerted and have a chance to review their configuration.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://tanzu.vmware.com/security/cve-2022-22968"&gt;CVE-2022-22968: Spring Framework Data Binding Rules Vulnerability&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have released &lt;a href="https://spring.io/blog/2022/04/13/spring-framework-5-3-19-and-5-2-21-available-now"&gt;Spring Framework 5.3.19 and 5.2.21&lt;/a&gt; which contain the fix. Spring Boot 2.6.7 and 2.5.13 are scheduled to be released on April 21, 2022.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Until Spring Boot 2.6.7 and 2.5.13 have been released, you should manually upgrade the Spring Framework dependency in your Spring Boot application. To override the Spring Framework version in your Maven or Gradle build, you should use the &lt;code&gt;spring-framework.version&lt;/code&gt; property.&lt;/p&gt;
+  &lt;p&gt;Please see the documentation for the Spring Boot &lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#using.parent-pom"&gt;Maven plugin&lt;/a&gt; and &lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#managing-dependencies.dependency-management-plugin.customizing"&gt;Gradle plugin&lt;/a&gt; for details.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Prior to the fix in today&amp;rsquo;s releases, the patterns for &lt;code&gt;disallowedFields&lt;/code&gt; in a &lt;code&gt;DataBinder&lt;/code&gt; were &lt;em&gt;case sensitive&lt;/em&gt; which means a field was not effectively protected unless patterns were registered with both upper and lower case for the first character of the field, including all combinations of upper and lower case for the first character of all nested fields within the property path.&lt;/p&gt;
+&lt;p&gt;For example, if you&amp;rsquo;ve seen the &lt;a href="https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement#disallowed-fields"&gt;Disallowed Fields&lt;/a&gt; workaround for the RCE vulnerability, you might have wondered why the disallowed field patterns included seemingly duplicate entries. Each pattern had to be registered twice, once with the first character in lowercase, and again with the first character in uppercase. The fix we&amp;rsquo;ve released today addresses this by ignoring case when matching against disallowed field patterns. This has the added benefit of disallowing binding to a &lt;code&gt;firstName&lt;/code&gt; property when the registered pattern is &lt;code&gt;firstname&lt;/code&gt;. In other words, the changes we&amp;rsquo;ve made not only fix the vulnerability reported in the CVE, but they also make disallowed field patterns more robust in general.&lt;/p&gt;&lt;h3&gt;&lt;a href="#does-this-affect-my-application" class="anchor" name="does-this-affect-my-application"&gt;&lt;/a&gt;Does This Affect My Application?&lt;/h3&gt;
+&lt;p&gt;These are the necessary conditions for the specific vulnerability:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Registration of &lt;em&gt;disallowed field patterns&lt;/em&gt; in a &lt;code&gt;DataBinder&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;spring-webmvc&lt;/code&gt; or &lt;code&gt;spring-webflux&lt;/code&gt; dependency&lt;/li&gt;
+  &lt;li&gt;Spring Framework versions 5.3.0 to 5.3.18, 5.2.0 to 5.2.20, and older versions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Additional notes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The issue relates to data binding used to populate an object from request parameters (either query parameters or form data). Data binding is used for controller method parameters that are annotated with &lt;code&gt;@ModelAttribute&lt;/code&gt; or optionally without it, and without any other Spring Web annotation.&lt;/li&gt;
+  &lt;li&gt;The issue does not relate to &lt;code&gt;@RequestBody&lt;/code&gt; controller method parameters (e.g. JSON deserialization). However, such methods may still be vulnerable if they have another method parameter populated via data binding from query parameters.&lt;/li&gt;
+  &lt;li&gt;Your Spring MVC or Spring WebFlux application may be susceptible to data binding issues even if you do not register &lt;em&gt;disallowed field patterns&lt;/em&gt;. We highly encourage you to review your &lt;code&gt;DataBinder&lt;/code&gt; configuration and more broadly your approach to data binding. For more details, please see the new &lt;a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-initbinder-model-design"&gt;Data Binding Model Design&lt;/a&gt; section in the Spring Framework reference manual.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#reassessing-your-data-binding-approach" class="anchor" name="reassessing-your-data-binding-approach"&gt;&lt;/a&gt;Reassessing Your Data Binding Approach&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re using &lt;em&gt;disallowed field patterns&lt;/em&gt; and plan to continue using them, you should definitely update to Spring Framework &lt;strong&gt;5.3.19&lt;/strong&gt; and &lt;strong&gt;5.2.21&lt;/strong&gt; or greater as soon as possible. &lt;/p&gt;
+&lt;p&gt;However, there are alternatives to relying on &lt;em&gt;disallowed field patterns&lt;/em&gt;. As discussed in the new &lt;a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-initbinder-model-design"&gt;Model Design&lt;/a&gt; section in the reference manual, our recommended approach is to use a &lt;em&gt;dedicated model object&lt;/em&gt; that exposes only properties that are relevant for the supported use case. Another alternative is to switch to &lt;em&gt;allowed field patterns&lt;/em&gt;: instead of supplying a &amp;ldquo;deny list&amp;rdquo; via &lt;code&gt;setDisallowedFields()&lt;/code&gt;, you can supply an explicit &amp;ldquo;allow list&amp;rdquo; via &lt;code&gt;setAllowedFields()&lt;/code&gt; in a &lt;code&gt;WebDataBinder&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Keep in mind that it is strongly recommended that you do &lt;strong&gt;not&lt;/strong&gt; use types from your domain model such as JPA or Hibernate entities as the model object in data binding scenarios.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 5.3.19 and 5.2.21 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/04/13/spring-framework-5-3-19-and-5-2-21-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2022-04-13:4765</id>
+    <updated>2022-04-13T11:04:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.3.19&lt;/code&gt; and &lt;code&gt;5.2.21&lt;/code&gt; are available now.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.3.19&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.19"&gt;12 fixes and improvements&lt;/a&gt;. Spring Framework &lt;code&gt;5.2.21&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.21.RELEASE"&gt;5 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, Spring Framework &lt;code&gt;5.3.19&lt;/code&gt; and &lt;code&gt;5.2.21&lt;/code&gt; include a fix for &lt;a href="https://spring.io/blog/2022/04/13/spring-framework-data-binding-rules-vulnerability-cve-2022-22968"&gt;CVE-2022-22968: Spring Framework Data Binding Rules Vulnerability&lt;/a&gt; and are recommended upgrades for all Spring production scenarios.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.19/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - April 12th, 2022 (Devnexus 2022 Edition!!)</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/04/12/this-week-in-spring-april-12th-2022-devnexus-2022-edition" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2022-04-12:4764</id>
+    <updated>2022-04-12T22:00:00Z</updated>
+    <content type="html">&lt;h2&gt;&lt;a href="#this-week-in-spring-devnexus-edition" class="anchor" name="this-week-in-spring-devnexus-edition"&gt;&lt;/a&gt;This Week in Spring - Devnexus Edition&lt;/h2&gt;
+&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt; - I&amp;rsquo;m at my first in-person event since the virus: Devnexus! WOOHOOO!! Well, technically I&amp;rsquo;m still in San Francisco as I write this, but I&amp;rsquo;ll be in Atlanta, GA tomorrow for&amp;hellip; Devnexus! I hope if you&amp;rsquo;re there that you&amp;rsquo;ll reach out! &lt;/p&gt;
+&lt;p&gt;Friends, colleagues, and community members from the Spring, Tanzu, and adjoining communities will also be there! Here are some of the people I hope to nab a selfie with and whose talks I hope to see! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/699"&gt;Glenn Renfro&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/3383"&gt;Adib Saikali&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/3373"&gt;Joe Grandja&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/3269"&gt;Whitney Lee&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/3231"&gt;Hillmer Chona&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/2658"&gt;Jonatan Ivanov&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/2647"&gt;Josh Cummings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/2271"&gt;Alberto C. Rios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://devnexus.com/speakers/3246"&gt;Simon Brown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And of course &lt;a href="https://devnexus.com/speakers/1669"&gt;I&amp;rsquo;ll be doing two talks, as well,&lt;/a&gt; (one on GraalVm and another on edge services) and I hope you&amp;rsquo;ll come see those, too! &lt;/p&gt;
+&lt;p&gt;And with that out of the way, let&amp;rsquo;s get on with our regularly scheduled roundup!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/04/07/a-bootiful-podcast-graphql-java-founder-andi-marek"&gt;A Bootiful Podcast: GraphQL Java founder Andi Marek&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/asirselvasingh/status/1511758596698099712?s=12&amp;t=RpVGANAybKGoPHwwYDPBCQ"&gt;Asir V Selvasingh on Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://kubernetes.io/blog/2022/04/07/upcoming-changes-in-kubernetes-1-24/"&gt;Blog: Kubernetes Removals and Deprecations In 1.24&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Congrats to the Hibernate team &lt;a href="https://in.relation.to/2022/03/31/orm-60-final/"&gt;for reaching Hibernate 6.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.sivalabs.in/2022/04/my-attempt-to-understand-why-people-perceive-java-as-complex/"&gt;SivaLabs has a nice post called, &amp;ldquo;My attempt to understand why people perceive Java as complex.&amp;rdquo; &lt;/a&gt; What do you think?&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2022/04/05/spring-cloud-data-flow-2-9-4-released"&gt;Spring Cloud Data Flow 2.9.4 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1512161238121209856"&gt; Spring Cloud Azure 4.0 integrations are generally available. &lt;/a&gt; Congrats to the teams at Microsoft and the community on such an epic release!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: GraphQL Java founder Andi Marek</title>
     <link rel="alternate" href="https://spring.io/blog/2022/04/07/a-bootiful-podcast-graphql-java-founder-andi-marek" />
@@ -339,10 +433,11 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
     <updated>2022-03-31T10:27:00Z</updated>
     <content type="html">&lt;p&gt;&lt;strong&gt;Updates&lt;/strong&gt; &lt;/p&gt;
 &lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;[04-13 15:00 BST]&lt;/strong&gt; &lt;a href="https://spring.io/blog/2022/04/13/spring-framework-data-binding-rules-vulnerability-cve-2022-22968"&gt;&amp;ldquo;Data Binding Rules Vulnerability CVE-2022-22968&amp;rdquo;&lt;/a&gt; follow-up blog post published, related to the &amp;ldquo;disallowedFields&amp;rdquo; from the &lt;a href="#suggested-workarounds"&gt;Suggested Workarounds&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;[04-04 10:45 BST]&lt;/strong&gt; Updated &lt;a href="https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement#am-i-impacted"&gt;Am I Impacted&lt;/a&gt; with improved description for deployment requirements&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;[04-01 16:35 BST]&lt;/strong&gt; Updated &lt;a href="https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement#am-i-impacted"&gt;Am I Impacted&lt;/a&gt; with additional notes&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;[04-01 13:05 BST]&lt;/strong&gt; Updated &lt;a href="https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement#suggested-workarounds"&gt;Suggested Workarounds&lt;/a&gt; section for Apache Tomcat upgrades and Java 8 downgrades&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;[04-01 12:51 BST]&lt;/strong&gt; Apache Tomcat releases versions &lt;strong&gt;10.0.20&lt;/strong&gt;, &lt;strong&gt;9.0.62&lt;/strong&gt;, and &lt;strong&gt;8.5.78&lt;/strong&gt; which close the attack vector on Tomcat’s side, see &lt;a href="https://spring.io/blog/2022/04/01/spring-framework-rce-mitigation-alternative"&gt;mitigation alternative&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;[04-01 12:51 BST]&lt;/strong&gt; &lt;a href="https://spring.io/blog/2022/04/01/spring-framework-rce-mitigation-alternative"&gt;&amp;ldquo;Mitigation Alternative&amp;rdquo;&lt;/a&gt; follow-up blog post published, announcing Apache Tomcat releases versions &lt;strong&gt;10.0.20&lt;/strong&gt;, &lt;strong&gt;9.0.62&lt;/strong&gt;, and &lt;strong&gt;8.5.78&lt;/strong&gt; that close the attack vector on Tomcat’s side&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;[03-31 15:40 BST]&lt;/strong&gt; &lt;a href="https://spring.io/blog/2022/03/31/spring-boot-2-6-6-available-now"&gt;Spring Boot 2.6.6&lt;/a&gt; is available&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;[03-31 14:38 BST]&lt;/strong&gt; &lt;a href="https://spring.io/blog/2022/03/31/spring-boot-2-5-12-available-now"&gt;Spring Boot 2.5.12&lt;/a&gt; is available&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;[03-31 14:00 BST]&lt;/strong&gt; &lt;a href="https://tanzu.vmware.com/security/cve-2022-22965"&gt;CVE-2022-22965&lt;/a&gt; is published&lt;/li&gt;
@@ -661,58 +756,6 @@ public class MyApp {&#xD;
 &lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/3.0.0-M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.7.0-M3 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-2-7-0-m3-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Phil Webb</name>
-    </author>
-    <id>tag:spring.io,2022-03-25:4746</id>
-    <updated>2022-03-25T00:00:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.7.0-M3&lt;/code&gt; has been released and is now available from &lt;a href="https://repo.spring.io/milestone"&gt;https://repo.spring.io/milestone&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.7.0-M3"&gt;over 90 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Notable new features include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Support for generating Docker images with Podman&lt;/li&gt;
-  &lt;li&gt;Improved &lt;code&gt;SanitizingFunction&lt;/code&gt; support&lt;/li&gt;
-  &lt;li&gt;Spring GraphQL 1.0.0-M6 support, including the new GraphQL client&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7.0-M3-Release-Notes"&gt;release notes&lt;/a&gt; for more details and upgrade instructions.&lt;/p&gt;
-&lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.7.0-M3/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.6.5 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-2-6-5-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Stéphane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2022-03-24:4745</id>
-    <updated>2022-03-24T15:34:02Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.6.5&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.6.5"&gt;66 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.6.5/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.5.11 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/03/24/spring-boot-2-5-11-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Stéphane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2022-03-24:4744</id>
-    <updated>2022-03-24T13:48:43Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.5.11&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.5.11"&gt;56 bug fixes, documentation improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.5.11/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
