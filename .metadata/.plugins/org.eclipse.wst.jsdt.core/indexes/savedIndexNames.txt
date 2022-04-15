@@ -6,6 +6,5 @@ INDEX VERSION 1.4+C:\eGovFrameDev-4.0.0-64bit\workspace\Spring\.metadata\.plugin
 3582805144.index
 1320429049.index
 2718235343.index
-1861768679.index
 370341905.index
 1870969510.index
