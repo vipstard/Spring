@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="    //이메일 정규식 체크"/>
 			<item value="body"/>
 			<item value="Login"/>
 			<item value="MemberService"/>
@@ -22,7 +23,6 @@
 			<item value="List"/>
 			<item value="번호"/>
 			<item value="vo"/>
-			<item value="htmlView"/>
 		</list>
 		<list key="replacehistory">
 			<item value="memberService"/>
