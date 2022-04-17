@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Join"/>
+		<item key="selection" value="body"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="    //이메일 정규식 체크"/>
+			<item value="body"/>
+			<item value="Login"/>
+			<item value="MemberService"/>
 			<item value="Join"/>
 			<item value="Joinf"/>
 			<item value="글쓰기"/>
@@ -19,12 +23,9 @@
 			<item value="List"/>
 			<item value="번호"/>
 			<item value="vo"/>
-			<item value="htmlView"/>
-			<item value="go"/>
-			<item value="configuration"/>
-			<item value="java"/>
 		</list>
 		<list key="replacehistory">
+			<item value="memberService"/>
 			<item value="service"/>
 		</list>
 	</section>
