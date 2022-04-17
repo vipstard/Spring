@@ -22,12 +22,12 @@
 				<c:if test="${!empty LoginVo}">
 					<div class="form-group">
 						<label>${LoginVo.name }님 환영합니다.</label>
-						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/LogOut.do'">LogOut</button>
+						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/LogOut'">LogOut</button>
 					</div>
 				</c:if>
 	<c:if test="${empty LoginVo}">
-	<button type="button" class="btn" onclick="location.href='/TEST/JoinForm.do'">Join</button>
-    <button type="button" class="btn" onclick="location.href='/TEST/LoginForm.do'">Login</button>
+	<button type="button" class="btn" onclick="location.href='/TEST/JoinForm'">Join</button>
+    <button type="button" class="btn" onclick="location.href='/TEST/LoginForm'">Login</button>
     </c:if>
     </div>
     <div class="panel-body">
@@ -40,10 +40,11 @@
       <th>작성일</th>
       <th>조회수</th>
    </tr>
+   
    <c:forEach var="vo" items="${list}">
    <tr>
    	  <td>${vo.idx}</td>
-      <td><a href="/myapp/boardContent.do?idx=${vo.idx}">${vo.title}</a></td>
+      <td><a href="/TEST/boardContent.do?idx=${vo.idx}">${vo.title}</a></td>
       <td>${vo.writer}</td>
       <td>${vo.indate}</td>
       <td>${vo.count}</td>
@@ -57,6 +58,7 @@
    		</td>
    </tr>
    </c:if>
+   
 </table>
 
 </div>
