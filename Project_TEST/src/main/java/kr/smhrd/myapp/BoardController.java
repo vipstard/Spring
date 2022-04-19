@@ -28,15 +28,14 @@ public class BoardController {
 	
 	//게시판리스트 요청받는 메서드
 	//@RequestMapping : 특정 URI로 온 요청 처리 방식 정의
-	@RequestMapping("/")
+	@RequestMapping("/boardList")
 	public String boardList(Model model) {
 		ArrayList<Board> list = mapper.boardList();
-
 		
 		model.addAttribute("list", list);
 		
 		//return "/WEB-INF/views/boardList.do"
-		return "boardList";
+		return "/boardList";
 	}
 	
 	//@GetMapping : Get 요청 처리
@@ -93,17 +92,30 @@ public class BoardController {
 	
 	
 	//회원가입폼
-	@GetMapping("/JoinForm.do")
+	@GetMapping("/JoinForm")
 	public String JoinForm() {
 		return "JoinForm";
 			
 	}
 		
 	//로그인폼
-	@GetMapping("/LoginForm.do")
+	@GetMapping("/LoginForm")
 	public String LoginForm() {
 		return "LoginForm";
 			
 	}
+	
+	//아이디 찾기
+	@GetMapping("/userSearch")
+	public String userSearch() {
+		return "userSearch";
+	}
+	
+	//아이디 찾기
+	@GetMapping("/pwSearch")
+	public String pwSearch() {
+		return "pwSearch";
+	}
+		
 	
 }

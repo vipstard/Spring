@@ -32,7 +32,7 @@
                 <div class="col-sm-3">
 
                     <div class="login-box well">
-                        <form accept-charset="UTF-8" role="form" method="post" action="/TEST/Login.do">
+                        <form accept-charset="UTF-8" role="form" method="post" action="/TEST/Login">
                             <legend>로그인</legend>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -44,10 +44,14 @@
                                 <!-- 비밀번호 -->
                                 <input type="password" id="password" value='' name="pw" placeholder="비밀번호를 입력하세요" class="form-control" />
                             </div>
-                            <button type="submit" id="login-submit" class="btn btn-default btn-block"/>로그인</button> <span class='text-center'><a href="" class="text-sm">비밀번호 찾기</a></span>
-                            <div class="form-group">
-                                <a href="/TEST/JoinForm.do" class="btn btn-default btn-block"> 회원가입</a>
-                            </div>
+                            <button type="submit" id="login-submit" class="btn btn-default btn-block">로그인</button>
+                            <button type="button" id="login-submit" class="btn btn-default btn-block" onclick="location.href='/TEST/JoinForm'">회원가입</button>
+                            <span class='text-center'>
+                            <button type="button" id="login-submit" class="btn btn-default btn-block" onclick="location.href='/TEST/userSearch'">아이디찾기</button>
+                            <button type="button" id="login-submit" class="btn btn-default btn-block" onclick="location.href='./pwSearch'">비밀번호찾기</button>
+                          
+                            </span>
+
                         </form>
                     </div>
 

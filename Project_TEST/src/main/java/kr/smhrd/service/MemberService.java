@@ -8,4 +8,13 @@ public interface MemberService {
 	
 	//로그인
 	public MemberVO Login(MemberVO vo);
+	
+	// 아이디 중복체크
+	public int idCheck(String id);
+		
+	// 이메일 중복체크
+	public int emailCheck(String email);
+	
+	// 아이디 찾기
+	public String find_id(String name, String phone);
 }
