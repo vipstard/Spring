@@ -1,4 +1,4 @@
-package kr.smhrd.myapp;
+package kr.smhrd.controller;
 
 import javax.servlet.http.HttpSession;
 

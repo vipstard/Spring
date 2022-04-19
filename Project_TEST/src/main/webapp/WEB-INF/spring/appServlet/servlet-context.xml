@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="kr.smhrd.myapp"/>
+	<context:component-scan base-package="kr.smhrd.controller"/>
 	<context:component-scan base-package="kr.smhrd.service"/>
 	
 

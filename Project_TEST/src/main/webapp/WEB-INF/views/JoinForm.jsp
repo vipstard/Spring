@@ -175,6 +175,8 @@ display: none;
                 } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
                     $('.id_already').css("display","inline-block");
                     $('.id_ok').css("display", "none");
+                    alert("아이디를 다시 입력해주세요");
+                    $('#id').val('');
                 }
             },
             error:function(){
@@ -226,6 +228,9 @@ function EmailCheck(str){
                 } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
                     $('.email_already').css("display","inline-block");
                     $('.email_ok').css("display", "none");
+                    alert("이메일을 다시 입력해주세요");
+                    $('#email').val('');
+                    
                 }
             },
             error:function(){
