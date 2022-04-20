@@ -101,7 +101,7 @@ public class BoardController {
 	//로그인폼
 	@GetMapping("/LoginForm")
 	public String LoginForm() {
-		return "LoginForm";
+		return "Login";
 			
 	}
 	
@@ -111,10 +111,16 @@ public class BoardController {
 		return "userSearch";
 	}
 	
-	//아이디 찾기
+	//비밀번호 찾기
 	@GetMapping("/pwSearch")
 	public String pwSearch() {
 		return "pwSearch";
+	}
+	
+	//아이디 찾기
+	@GetMapping("/EditProfile")
+	public String EditProfile() {
+		return "EditProfile";
 	}
 		
 	

@@ -14,6 +14,7 @@ public class MemberServiceImple implements MemberService {
 	@Autowired
 	private MemberMapper mapper;
 	
+	
 	// 회원가입 mapper 접근
 	@Override
 	public void Join(MemberVO vo) {
@@ -60,6 +61,13 @@ public class MemberServiceImple implements MemberService {
 		}
 		
 		return result ;
+	}
+
+	//회원정보 수정
+	@Override
+	public void memberUpdate(MemberVO vo) {
+		System.out.println("Service " + vo.getEmail() + " " + vo.getPw());
+		mapper.memberUpdate(vo);
 	}
 	
 

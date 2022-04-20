@@ -49,7 +49,7 @@
                             <span class='text-center'>
                             <button type="button" id="login-submit" class="btn btn-default btn-block" onclick="location.href='/TEST/userSearch'">아이디찾기</button>
                             <button type="button" id="login-submit" class="btn btn-default btn-block" onclick="location.href='./pwSearch'">비밀번호찾기</button>
-                          
+                          	<a href="/kakaologin"><img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="200"/></a>
                             </span>
 
                         </form>

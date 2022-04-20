@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +23,7 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
-	
+	// 회원가입
 	@PostMapping("/Join")
 	public String Join(MemberVO vo) {
 		System.out.println("회원가입");
@@ -94,6 +95,23 @@ public class MemberController {
 		String result = memberService.find_id(name, phone);
 		
 		return result;
+	}
+	
+	
+	//회원 정보 수정
+	@RequestMapping(value="/memberUpdate", method=RequestMethod.POST)
+	public String memberUpdate(MemberVO vo) {
+		
+		System.out.print("회원수정 컨트롤러 ");
+		System.out.println(vo.getEmail() + " " + vo.getPw());
+		
+		try {
+			memberService.memberUpdate(vo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/boardList";
 	}
 
 }

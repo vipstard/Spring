@@ -17,4 +17,7 @@ public interface MemberService {
 	
 	// 아이디 찾기
 	public String find_id(String name, String phone);
+	
+	//회원 수정
+	public void memberUpdate(MemberVO vo);
 }

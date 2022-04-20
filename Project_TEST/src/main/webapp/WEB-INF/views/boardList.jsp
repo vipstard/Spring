@@ -23,6 +23,7 @@
 					<div class="form-group">
 						<label>${LoginVo.name }님 환영합니다.</label>
 						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/LogOut'">LogOut</button>
+						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/EditProfile'">Edit Profile</button>
 					</div>
 				</c:if>
 	<c:if test="${empty LoginVo}">
