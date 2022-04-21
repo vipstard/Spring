@@ -287,7 +287,7 @@ input[type=text]:placeholder {
 
     <!-- Login Form -->
     <form accept-charset="UTF-8" role="form" method="post" action="/TEST/Login">
-      <input type="text" id="email" class="fadeIn second" name="email" placeholder="login">
+      <input type="text" id="id" class="fadeIn second" name="id" placeholder="login">
       <input type="text" id="pw" class="fadeIn third" name="pw" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
@@ -297,7 +297,10 @@ input[type=text]:placeholder {
       <a class="underlineHover" href="/TEST/JoinForm">Sign Up</a> / 
       <a class="underlineHover" href="/TEST/userSearch">Forgot ID?</a> / 
       <a class="underlineHover" href="#">Forgot Password?</a><br>
-      <a href="/kakaologin"><img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="200"/></a>
+      <!-- 카카오 로그인 버튼 -->
+      <a href="/TEST/kakaologin"><img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" height="30" width="200"/></a><br>
+      <a href="${url}"><img height="30"  width="200" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a>
+
     </div>
 
   </div>

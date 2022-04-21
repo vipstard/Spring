@@ -1,7 +1,9 @@
 package kr.smhrd.domain;
 
 import lombok.Data;
+import lombok.ToString;
 
+@ToString
 @Data
 public class MemberVO {
 	private int idx;
@@ -13,4 +15,6 @@ public class MemberVO {
 	private String Address;
 	private String indate;
 	private String phone;
+	
+	
 }

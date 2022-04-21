@@ -14,11 +14,11 @@
 	
 	<!-- 로그인 -->
 	<select id="MemberLogin" resultType="kr.smhrd.domain.MemberVO">
-	Select * from T_MEMBER where email=#{email} and pw=#{pw}
+		Select * from T_MEMBER where id=#{id} and pw=#{pw}
 	</select>
 	
 	<!-- 회원정보 수정 -->
-	<update id="memberUpdate" parameterType="kr.smhrd.domain.MemberVO">
+	<update id="MemberUpdate" parameterType="kr.smhrd.domain.MemberVO">
 		update t_member set email=#{email}, pw=#{pw}, phone=#{phone}, address=#{address} where idx=#{idx}
 	</update>
 

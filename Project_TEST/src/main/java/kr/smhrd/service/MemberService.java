@@ -4,7 +4,7 @@ import kr.smhrd.domain.MemberVO;
 
 public interface MemberService {
 	//회원가입
-	public void Join(MemberVO vo) throws Exception;
+	public void Join(MemberVO vo);
 	
 	//로그인
 	public MemberVO Login(MemberVO vo);

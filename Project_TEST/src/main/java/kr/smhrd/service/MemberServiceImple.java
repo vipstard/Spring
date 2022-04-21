@@ -24,6 +24,7 @@ public class MemberServiceImple implements MemberService {
 	//로그인 mapper 접근
 	@Override
 	public MemberVO Login(MemberVO vo) {
+		System.out.println("Service : " + vo);
 	MemberVO VO = mapper.MemberLogin(vo);
 	
 	return VO;	
@@ -66,8 +67,8 @@ public class MemberServiceImple implements MemberService {
 	//회원정보 수정
 	@Override
 	public void memberUpdate(MemberVO vo) {
-		System.out.println("Service " + vo.getEmail() + " " + vo.getPw());
-		mapper.memberUpdate(vo);
+		System.out.println("Service : " + vo);
+		mapper.MemberUpdate(vo);
 	}
 	
 

@@ -40,7 +40,7 @@ public class MemberController {
 	// 회원 로그인
 	@PostMapping("/Login")
 	public String Login(MemberVO vo, HttpSession session) {
-		System.out.println("로그인 " + vo.getEmail() + " " + vo.getPw());
+		System.out.println("로그인 " + vo.getId() + " " + vo.getPw());
 		MemberVO Login = memberService.Login(vo);
 		
 		if(Login!=null) {
@@ -99,7 +99,7 @@ public class MemberController {
 	
 	
 	//회원 정보 수정
-	@RequestMapping(value="/memberUpdate", method=RequestMethod.POST)
+	@PostMapping("/memberUpdate")
 	public String memberUpdate(MemberVO vo) {
 		
 		System.out.print("회원수정 컨트롤러 ");
@@ -113,5 +113,5 @@ public class MemberController {
 		}
 		return "redirect:/boardList";
 	}
-
+	
 }

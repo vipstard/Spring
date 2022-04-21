@@ -59,8 +59,9 @@ display: none;
 				
 				<div class="mb-3">
 					<label for="address2">아이디<span class="text-muted">
-							</span></label> <input type="text" class="form-control" id="id" name="id" value=${LoginVo.id }
-							 oninput = "checkId()" readonly>
+							</span></label> 
+							<input type="hidden" class="form-control" id="idx" name="idx" value=${LoginVo.idx }>
+							<input type="text" class="form-control" id="id" name="id" value=${LoginVo.id } oninput = "checkId()" readonly>
 							
 							<!-- id ajax 중복체크 -->
 							<span class="id_ok">사용 가능한 아이디입니다.</span>
