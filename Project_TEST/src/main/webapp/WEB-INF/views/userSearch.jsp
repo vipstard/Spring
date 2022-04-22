@@ -98,9 +98,9 @@
 
 
 <script>
-/* 이메일 찾기 */ 
-//이메일 & 스토어 값 저장하기 위한 변수
-	// 이메일 값 받고 출력하는 ajax
+/* 아이디 찾기 */ 
+//아이디 & 스토어 값 저장하기 위한 변수
+	// 아이디 값 받고 출력하는 ajax
 	function findId_click(){
 		var name=$('#name').val()
 		var phone=$('#phone').val()

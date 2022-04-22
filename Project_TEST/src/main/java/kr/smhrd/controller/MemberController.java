@@ -114,4 +114,10 @@ public class MemberController {
 		return "redirect:/boardList";
 	}
 	
+	/*
+	 * @RequestMapping("/KakaoLogin") public String home(@RequestParam(value =
+	 * "code", required = false) String code) throws Exception{
+	 * System.out.println("#########" + code); return "boardList"; }
+	 */
+	
 }

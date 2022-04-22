@@ -122,6 +122,6 @@ public class BoardController {
 	public String EditProfile() {
 		return "EditProfile";
 	}
-		
+	
 	
 }
