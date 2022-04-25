@@ -14,13 +14,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.smhrd.domain.MemberVO;
+import kr.smhrd.service.KakaoService;
 import kr.smhrd.service.MemberService;
 
 @Controller
 public class MemberController {
 	
+	
 	@Autowired
 	private MemberService memberService;
+	private KakaoService kakaoService;
 	
 	
 	// 회원가입
@@ -54,8 +57,20 @@ public class MemberController {
 	// 회원 로그아웃
 	@RequestMapping("/LogOut")
 	public String LogOut(HttpSession session) {
+		String access_Token = (String)session.getAttribute("access_Token");
+		System.out.println("MemberController : " + access_Token);
 		
-		session.removeAttribute("LoginVo");
+		//카카오 세션 로그아웃시킴
+        if(access_Token != null && !"".equals(access_Token)){
+        	System.out.println("MemberController2 : " + access_Token);
+        	kakaoService.kakaoLogout(access_Token);
+            session.removeAttribute("access_Token");
+            
+        }
+        
+      //회원 세션 로그아웃
+      session.removeAttribute("LoginVo");
+        
 		return "redirect:/boardList";
 	}
 	

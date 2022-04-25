@@ -9,14 +9,32 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import kr.smhrd.domain.MemberVO;
+import kr.smhrd.mapper.MemberMapper;
+
 @Service
 public class KakaoService {
+	
+	 @Autowired
+	 private MemberMapper mapper;
+	 
+	 
+	 //카카오 로그인
+	 public MemberVO K_Login(String email) {
+		 System.out.println("K_Service : " + email);
+		 MemberVO VO = mapper.K_memberLogin(email);
+		 
+		 
+		 return VO;
+		 
+	 }
 
 
         public String getAccessToken (String authorize_code) {
@@ -123,4 +141,32 @@ public class KakaoService {
 
             return userInfo;
         }
+        
+        // 카카오로그아웃
+		public void kakaoLogout(String access_Token) {
+			String reqURL = "https://kapi.kakao.com/v1/user/logout";
+			System.out.println("1번: " + access_Token);
+			try {
+				System.out.println("2번: " + access_Token);
+				URL url = new URL(reqURL);
+				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Authorization", "Bearer " + access_Token);
+				int responseCode = conn.getResponseCode();
+				System.out.println("responseCode : " + responseCode);
+				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				String result = "";
+				String line = "";
+				while ((line = br.readLine()) != null) {
+					result += line;
+				}
+				System.out.println(result);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+        
+        
+       
 }

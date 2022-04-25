@@ -19,6 +19,11 @@ public interface MemberMapper {
 	//@Select("Select * from T_MEMBER where id=#{id} and pw=#{pw}")
 	public MemberVO MemberLogin(MemberVO vo);
 	
+
+	//카카오로그인
+	@Select("Select * from T_MEMBER where email=#{email}")
+	public MemberVO K_memberLogin(String email);
+	
 	// 아이디 중복체크
 	public int idCheck(String id);
 	
@@ -31,4 +36,7 @@ public interface MemberMapper {
 	
 	//회원정보 수정
 	public void MemberUpdate(MemberVO vo);
+	
+	
+	
 }
