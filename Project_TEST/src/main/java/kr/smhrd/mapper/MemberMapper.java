@@ -20,13 +20,18 @@ public interface MemberMapper {
 	public MemberVO MemberLogin(MemberVO vo);
 	
 
-	//카카오로그인
+	//카카오로그인, 네이버로그인, 구글로그인
 	@Select("Select * from T_MEMBER where email=#{email}")
-	public MemberVO K_memberLogin(String email);
+	public MemberVO Social_memberLogin(String email);
 	
-	//카카오간편로그인
+	//카카오간편회원가입
 	@Insert("insert into t_member(idx, name, email, indate) values(TMember_seq.nextval, #{name}, #{email},  sysdate)")
 	public void K_Join(@Param("email") String email, @Param("name") String name);
+	
+	//네이버 간편회원가입
+	@Insert("insert into t_member(idx, id, email, nick, name,  indate) values(TMember_seq.nextval, #{id}, #{email}, #{nick}, #{name}, sysdate)")
+	public void N_Join(@Param("id") String id, @Param("email") String email, @Param("nick") String nick, @Param("name") String name);
+	
 	
 	// 아이디 중복체크
 	public int idCheck(String id);

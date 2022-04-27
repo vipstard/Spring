@@ -98,13 +98,7 @@ public class BoardController {
 			
 	}
 		
-	//로그인폼
-	@GetMapping("/LoginForm")
-	public String LoginForm() {
-		return "Login";
-			
-	}
-	
+
 	//아이디 찾기
 	@GetMapping("/userSearch")
 	public String userSearch() {

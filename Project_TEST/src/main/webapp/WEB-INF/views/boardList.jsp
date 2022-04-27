@@ -29,7 +29,7 @@
 				</c:if>
 	<c:if test="${empty LoginVo}">
 	<button type="button" class="btn" onclick="location.href='/TEST/JoinForm'">Join</button>
-    <button type="button" class="btn" onclick="location.href='/TEST/LoginForm'">Login</button>
+    <button type="button" class="btn" onclick="location.href='/TEST/Login'">Login</button>
     </c:if>
     </div>
     <div class="panel-body">

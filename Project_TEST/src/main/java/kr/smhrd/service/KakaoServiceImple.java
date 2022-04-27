@@ -30,7 +30,7 @@ public class KakaoServiceImple implements KakaoService {
 	 @Override
 	 public MemberVO K_Login(String email) {
 		 System.out.println("K_Service : " + email);
-		 MemberVO VO = mapper.K_memberLogin(email);
+		 MemberVO VO = mapper.Social_memberLogin(email);
 		 
 		 
 		 return VO;
@@ -176,7 +176,7 @@ public class KakaoServiceImple implements KakaoService {
 		public MemberVO K_Join(String email, String name) {
 			mapper.K_Join(email, name);
 			
-			MemberVO vo = mapper.K_memberLogin(email);
+			MemberVO vo = mapper.Social_memberLogin(email);
 			
 			return vo;
 			
