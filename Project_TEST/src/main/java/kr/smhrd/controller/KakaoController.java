@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.domain.MemberVO;
 import kr.smhrd.service.KakaoService;
+import kr.smhrd.service.KakaoServiceImple;
 import kr.smhrd.service.MemberService;
 
 //카카로 로그인 컨트롤러 
@@ -33,16 +34,23 @@ public class KakaoController {
         System.out.println("###nickname#### : " + userInfo.get("nickname"));
         
         String email =(String)userInfo.get("email");
-        MemberVO K_Login = kakaoService.K_Login(email);
+        String name=(String)userInfo.get("nickname");
+        
+        MemberVO K_Login = kakaoService.K_Login(email); 
+        MemberVO K_Join;
         
         System.out.println("성공 : " + K_Login);
-        System.out.println("KaKaoController : " + access_Token);
-        if(K_Login!=null) {
+        
+        // 카카오 로그인 가능할때
+        if(K_Login!=null) { 
         	session.setAttribute("LoginVo", K_Login);
-        	session.setAttribute("access_Token", access_Token);
         	
-        }else {
-        	System.out.println("일치하는 아이디가 없습니다.");
+        }else { // 카카오 로그인 불가능 할때
+        	K_Join = kakaoService.K_Join(email, name);
+        	System.out.println(K_Join);
+        	System.out.println("간편가입완료");
+        	session.setAttribute("LoginVo", K_Join);
+        	
         }
         
         

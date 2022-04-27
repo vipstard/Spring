@@ -57,17 +57,7 @@ public class MemberController {
 	// 회원 로그아웃
 	@RequestMapping("/LogOut")
 	public String LogOut(HttpSession session) {
-		String access_Token = (String)session.getAttribute("access_Token");
-		System.out.println("MemberController : " + access_Token);
-		
-		//카카오 세션 로그아웃시킴
-        if(access_Token != null && !"".equals(access_Token)){
-        	System.out.println("MemberController2 : " + access_Token);
-        	kakaoService.kakaoLogout(access_Token);
-            session.removeAttribute("access_Token");
-            
-        }
-        
+
       //회원 세션 로그아웃
       session.removeAttribute("LoginVo");
         

@@ -42,10 +42,21 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>FileUploadServlet</display-name>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<servlet-class>kr.smhrd.service.FileUploadServlet</servlet-class>
+	</servlet>
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<url-pattern>/FileUploadServlet</url-pattern>
 	</servlet-mapping>
 
 

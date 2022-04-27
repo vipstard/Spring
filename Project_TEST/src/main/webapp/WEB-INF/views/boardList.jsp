@@ -16,13 +16,14 @@
 <body>
  
 <div class="container">
-  <h2>Spring WEB MVC 게시판</h2>
+  <h2>Spring WEB MVC 게시판</h2>    
   <div class="panel panel-default">
     <div class="panel-heading">
 				<c:if test="${!empty LoginVo}">
 					<div class="form-group">
 						<label>${LoginVo.name }님 환영합니다.</label>
-						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/LogOut'">LogOut</button>
+						
+						<button class="btn btn-default btn-sm" onclick="location.href='https://kauth.kakao.com/oauth/logout?client_id=e3eced6c366d05e611468e218fc8f42d&logout_redirect_uri=http://localhost:8081/TEST/LogOut'">LogOut</button>
 						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/EditProfile'">Edit Profile</button>
 					</div>
 				</c:if>
