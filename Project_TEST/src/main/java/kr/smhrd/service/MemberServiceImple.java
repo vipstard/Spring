@@ -1,5 +1,7 @@
 package kr.smhrd.service;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,6 +72,15 @@ public class MemberServiceImple implements MemberService {
 		System.out.println("Service : " + vo);
 		mapper.MemberUpdate(vo);
 	}
+
+	//회원리스트
+	@Override
+	public ArrayList<MemberVO> memberList() {
+		ArrayList<MemberVO> list = mapper.memberList();
+		return list;
+	}
+	
+	
 	
 
 	

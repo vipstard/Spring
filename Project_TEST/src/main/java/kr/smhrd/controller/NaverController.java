@@ -46,7 +46,7 @@ public class NaverController {
 		
 		//model에 url 실어서 로그인페이지로 보냄. 로그인페이지에서 네이버로그인 버튼 눌렀을때 네이버 띄우기위해
 		model.addAttribute("url", naverAuthUrl); 
-		return "Login";
+		return "/Login";
 	}
 
 	
@@ -110,11 +110,6 @@ public class NaverController {
 		
 	}
 
-	//로그아웃
-	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
-	public String logout(HttpSession session) throws IOException {
-		System.out.println("여기는 logout");
-		session.invalidate();
-		return "redirect:index.jsp";
-	}
+	
+	
 }

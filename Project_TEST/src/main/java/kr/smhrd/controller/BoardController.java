@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.domain.Board;
+import kr.smhrd.domain.MemberVO;
 import kr.smhrd.mapper.BoardMapper;
 
 //@Controller : Spring MVC 프로젝트에서 컨트롤러 역할

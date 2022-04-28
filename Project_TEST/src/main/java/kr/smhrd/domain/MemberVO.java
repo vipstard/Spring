@@ -15,6 +15,7 @@ public class MemberVO {
 	private String Address;
 	private String indate;
 	private String phone;
+	private String ad_ck;
 	
 	
 }

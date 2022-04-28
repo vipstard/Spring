@@ -1,5 +1,7 @@
 package kr.smhrd.service;
 
+import java.util.ArrayList;
+
 import kr.smhrd.domain.MemberVO;
 
 public interface MemberService {
@@ -20,4 +22,8 @@ public interface MemberService {
 	
 	//회원 수정
 	public void memberUpdate(MemberVO vo);
+	
+	//회원리스트
+	public ArrayList<MemberVO> memberList();
+
 }

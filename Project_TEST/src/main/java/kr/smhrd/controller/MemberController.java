@@ -1,9 +1,12 @@
 package kr.smhrd.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +44,7 @@ public class MemberController {
 	}
 	
 	// 회원 로그인
-	@PostMapping("/Login")
+	@PostMapping("/login_ok")
 	public String Login(MemberVO vo, HttpSession session) {
 		System.out.println("로그인 " + vo.getId() + " " + vo.getPw());
 		MemberVO Login = memberService.Login(vo);
@@ -59,7 +62,7 @@ public class MemberController {
 	public String LogOut(HttpSession session) {
 
       //회원 세션 로그아웃
-      session.removeAttribute("LoginVo");
+      session.invalidate();
         
 		return "redirect:/boardList";
 	}
@@ -118,6 +121,18 @@ public class MemberController {
 		}
 		return "redirect:/boardList";
 	}
+	
+	//회원관리
+		@RequestMapping("/member_Manage")
+		public String member_Manage(Model model) {
+			
+			
+			ArrayList<MemberVO> Mem_list = memberService.memberList();
+			
+			model.addAttribute("Mem_list", Mem_list);
+			
+			return "/member_Manage";
+		}
 	
 	/*
 	 * @RequestMapping("/KakaoLogin") public String home(@RequestParam(value =

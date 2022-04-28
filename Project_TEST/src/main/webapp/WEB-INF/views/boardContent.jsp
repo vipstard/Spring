@@ -55,9 +55,9 @@
    </tr>
    <tr>
    		<td colsapn="4" align="center">
-   			<button class="btn btn-info btn-sm" onclick="location.href='/myapp/boardUpdate.do/${vo.idx}'">수정</button>
-   			<button class="btn btn-warning btn-sm" onclick="location.href='/myapp/boardDelete.do/${vo.idx}'">삭제</button>
-   			<button class="btn btn-success btn-sm" onclick="location.href='/myapp/boardList.do'">리스트</button>
+   			<button class="btn btn-info btn-sm" onclick="location.href='/TEST/boardUpdate.do/${vo.idx}'">수정</button>
+   			<button class="btn btn-warning btn-sm" onclick="location.href='/TEST/boardDelete.do/${vo.idx}'">삭제</button>
+   			<button class="btn btn-success btn-sm" onclick="location.href='/TEST/boardList.do'">리스트</button>
    		</td>
    </tr>
 	</table>

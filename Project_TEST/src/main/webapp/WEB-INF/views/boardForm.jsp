@@ -20,7 +20,7 @@
     <div class="panel-body">
     
     
-      <form class="form-horizontal" action="/myapp/boardInsert.do" method="post">
+      <form class="form-horizontal" action="/TEST/boardInsert.do" method="post">
         <div class="form-group">
           <label class="control-label col-sm-2" for="title">제목:</label>
           <div class="col-sm-10">

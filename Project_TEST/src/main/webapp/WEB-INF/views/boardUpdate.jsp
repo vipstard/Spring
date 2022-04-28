@@ -25,7 +25,7 @@
     <div class="panel-body">
     
     
-      <form class="form-horizontal" action="/myapp/boardUpdate.do" method="post">
+      <form class="form-horizontal" action="/TEST/boardUpdate.do" method="post">
       <input type="hidden" value="${vo.idx}" name="idx">
       
         <div class="form-group">

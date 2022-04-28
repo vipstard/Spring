@@ -1,6 +1,8 @@
 package kr.smhrd.mapper;
 
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -45,6 +47,10 @@ public interface MemberMapper {
 	
 	//회원정보 수정
 	public void MemberUpdate(MemberVO vo);
+	
+	//회원 리스트
+	@Select("select * from t_member order by idx")
+	public ArrayList<MemberVO> memberList();
 	
 	
 	

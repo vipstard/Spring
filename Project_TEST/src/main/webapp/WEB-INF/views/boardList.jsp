@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>SSook SSoook</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
 <body>
  
 <div class="container">
-  <h2>Spring WEB MVC 게시판</h2>    
+  <h2>SSook SSoook</h2>    
   <div class="panel panel-default">
     <div class="panel-heading">
 				<c:if test="${!empty LoginVo}">
@@ -25,6 +25,9 @@
 						
 						<button class="btn btn-default btn-sm" onclick="location.href='https://kauth.kakao.com/oauth/logout?client_id=e3eced6c366d05e611468e218fc8f42d&logout_redirect_uri=http://localhost:8081/TEST/LogOut'">LogOut</button>
 						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/EditProfile'">Edit Profile</button>
+						<c:if test="${LoginVo.ad_ck == '1'}">
+						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/member_Manage'">Management</button>
+						</c:if>
 					</div>
 				</c:if>
 	<c:if test="${empty LoginVo}">
@@ -64,7 +67,7 @@
 </table>
 
 </div>
-    <div class="panel-footer">지능형 IoT융합 SW전문가 과정</div>
+    <div class="panel-footer">SSook SSoook</div>
   </div>
 </div>
 
