@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.smhrd.domain.MemberVO;
-import kr.smhrd.service.KakaoService;
 import kr.smhrd.service.MemberService;
 
 @Controller
@@ -26,7 +25,7 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
-	private KakaoService kakaoService;
+	
 	
 	
 	// 회원가입

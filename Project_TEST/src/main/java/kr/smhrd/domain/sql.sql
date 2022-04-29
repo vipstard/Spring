@@ -41,3 +41,15 @@ increment by 1
 maxvalue 100
 cycle
 nocache;
+
+create table product(
+	product_id number,
+	product_name varchar2(50),
+	product_price number Default 0,
+	product_desc varchar2(500),
+	product_url varchar2(500),
+	primary key(product_id)
+	);
+	
+
+select * from product;

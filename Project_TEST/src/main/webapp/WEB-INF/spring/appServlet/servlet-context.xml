@@ -31,7 +31,8 @@
 	<beans:bean id="naverLoginBO" class="kr.smhrd.service.NaverLoginBO"/>
 
 	
-	
+	<!-- mapping : 가상 경로(상대경로), location : 리소스가 실제로 저장된 경로 -->
+	<resources mapping="/images/**" location="/WEB-INF/views/images/"/>
 	
 	
 </beans:beans>

@@ -33,7 +33,10 @@
 	<c:if test="${empty LoginVo}">
 	<button type="button" class="btn" onclick="location.href='/TEST/JoinForm'">Join</button>
     <button type="button" class="btn" onclick="location.href='/TEST/Login'">Login</button>
+    
+    
     </c:if>
+    <button type="button" class="btn" onclick="location.href='/TEST/productList'">제품구매</button>
     </div>
     <div class="panel-body">
     
