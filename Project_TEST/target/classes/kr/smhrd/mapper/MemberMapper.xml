@@ -23,5 +23,15 @@
 	</update>
 
 	
+	<!-- 회원목록 불러오기(페이징) -->
+	<select id="getMemberListPaging" resultType ="kr.smhrd.domain.MemberVO">
+		
+		<![CDATA[ 
+		SELECT /*INDEX_DESC(user user_board) */ * FROM (SELECT rownum AS rn, id, name, nick, email, address, indate, phone, pw, ad_ck  
+		FROM T_MEMBER WHERE rownum <= #{pageNum} * #{amount}) WHERE rn  > (#{pageNum} -1) * #{amount} 
+		]]>
+		
+	</select>
+	
 	
 </mapper>

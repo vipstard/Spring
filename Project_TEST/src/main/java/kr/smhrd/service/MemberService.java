@@ -1,7 +1,9 @@
 package kr.smhrd.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import kr.smhrd.domain.Criteria;
 import kr.smhrd.domain.MemberVO;
 
 public interface MemberService {
@@ -25,5 +27,8 @@ public interface MemberService {
 	
 	//회원리스트
 	public ArrayList<MemberVO> memberList();
+	
+	//회원리스트 (페이징 적용)
+	public List<MemberVO> getMemberListPaging(Criteria cri);
 
 }

@@ -2,12 +2,14 @@ package kr.smhrd.mapper;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import kr.smhrd.domain.Criteria;
 import kr.smhrd.domain.MemberVO;
 
 public interface MemberMapper {
@@ -52,6 +54,9 @@ public interface MemberMapper {
 	@Select("select * from t_member order by idx")
 	public ArrayList<MemberVO> memberList();
 	
+
+	/*회원 리스트(페이징) */
+	public List<MemberVO> getMemberListPaging(Criteria cri);
 	
 	
 	

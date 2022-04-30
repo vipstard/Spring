@@ -2,6 +2,7 @@
 <aop-reference-model>
 <aop-project name="Project_TEST"/>
 <aop-project name="SpringBoard_AJAX"/>
-<aop-project name="BootSample"/>
+<aop-project name="SpringBoard2"/>
+<aop-project name="SSookSSoook"/>
 <aop-project name="SpringBoard"/>
 </aop-reference-model>

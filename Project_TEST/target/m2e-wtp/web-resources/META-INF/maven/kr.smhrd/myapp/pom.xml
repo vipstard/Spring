@@ -58,6 +58,7 @@
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -82,6 +83,26 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+		 -->
+		  
+		<!-- log4j 추가 -->
+		 <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+		 
+		 
+		<!-- spring-test 추가 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+		    <scope>test</scope>
+		</dependency>
+ 
 
 		<!-- @Inject -->
 		<dependency>
@@ -91,12 +112,18 @@
 		</dependency>
 				
 		<!-- Servlet -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
+		 <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -180,6 +207,13 @@
 			<artifactId>scribejava-core</artifactId>
 			<version>2.8.1</version>
 		</dependency>	
+		
+		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+	<dependency>
+   	 	<groupId>org.bgee.log4jdbc-log4j2</groupId>
+    	<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+    	<version>1.16</version>
+	</dependency>	
 
 	</dependencies>
 	

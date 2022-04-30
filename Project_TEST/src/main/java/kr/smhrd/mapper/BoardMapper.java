@@ -1,9 +1,12 @@
 package kr.smhrd.mapper;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 
 import kr.smhrd.domain.Board;
+import kr.smhrd.domain.Criteria;
+import kr.smhrd.domain.MemberVO;
 
 public interface BoardMapper {
 	
@@ -23,4 +26,6 @@ public interface BoardMapper {
 	//특정 게시물 번호를 가진 게시물 수정
 	public void boardUpdate(Board vo);
 
+	
+	
 }

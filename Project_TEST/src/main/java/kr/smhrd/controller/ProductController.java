@@ -27,5 +27,14 @@ public class ProductController {
 		
 		return "/productList";
 	}
+	
+
+	@RequestMapping("/helpDesk")
+	public String helpDesk(Model model) {
+		
+		
+		
+		return "/helpDesk";
+	}
 
 }
