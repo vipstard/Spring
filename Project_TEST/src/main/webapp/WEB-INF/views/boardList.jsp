@@ -19,17 +19,17 @@
   <h2>SSook SSoook</h2>    
   <div class="panel panel-default">
     <div class="panel-heading">
-				<c:if test="${!empty LoginVo}">
-					<div class="form-group">
-						<label>${LoginVo.name }님 환영합니다.</label>
+			<c:if test="${!empty LoginVo}">
+				<div class="form-group">
+					<label>${LoginVo.name }님 환영합니다.</label>
 						
-						<button class="btn btn-default btn-sm" onclick="location.href='https://kauth.kakao.com/oauth/logout?client_id=e3eced6c366d05e611468e218fc8f42d&logout_redirect_uri=http://localhost:8081/TEST/LogOut'">LogOut</button>
-						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/EditProfile'">Edit Profile</button>
-						<c:if test="${LoginVo.ad_ck == '1'}">
-						<button class="btn btn-default btn-sm" onclick="location.href='/TEST/member_Manage'">Management</button>
-						</c:if>
-					</div>
-				</c:if>
+					<button class="btn btn-default btn-sm" onclick="location.href='https://kauth.kakao.com/oauth/logout?client_id=e3eced6c366d05e611468e218fc8f42d&logout_redirect_uri=http://localhost:8081/TEST/LogOut'">LogOut</button>
+					<button class="btn btn-default btn-sm" onclick="location.href='/TEST/EditProfile'">Edit Profile</button>
+					<c:if test="${LoginVo.ad_ck == '1'}">
+					<button class="btn btn-default btn-sm" onclick="location.href='/TEST/member_Manage'">Management</button>
+					</c:if>
+				</div>
+			</c:if>
 	<c:if test="${empty LoginVo}">
 	<button type="button" class="btn" onclick="location.href='/TEST/JoinForm'">Join</button>
     <button type="button" class="btn" onclick="location.href='/TEST/Login'">Login</button>

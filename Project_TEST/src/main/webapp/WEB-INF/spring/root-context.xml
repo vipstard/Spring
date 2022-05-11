@@ -13,7 +13,7 @@
          
          <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		 <property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:XE"></property>
-		 
+
          <property name="username" value="hr"/>
          <property name="password" value="hr"/>
       </bean>
@@ -26,6 +26,6 @@
       <bean class="org.mybatis.spring.SqlSessionFactoryBean">
           <property name="dataSource" ref="dataSource"/>
       </bean>
-      
       <mybatis-spring:scan base-package="kr.smhrd.mapper"/>
+      
 </beans>

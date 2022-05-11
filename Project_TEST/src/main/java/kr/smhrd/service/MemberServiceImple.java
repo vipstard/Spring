@@ -3,14 +3,13 @@ package kr.smhrd.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.smhrd.domain.Criteria;
 import kr.smhrd.domain.MemberVO;
 import kr.smhrd.mapper.MemberMapper;
-import lombok.extern.java.Log;
+
 
 @Service
 public class MemberServiceImple implements MemberService {
@@ -85,8 +84,8 @@ public class MemberServiceImple implements MemberService {
 	/* 회원리스트 (페이징 적용) */
 	@Override
 	public List<MemberVO> getMemberListPaging(Criteria cri) {
-		
-		return mapper.getMemberListPaging(cri);
+		List<MemberVO> list = mapper.getMemberListPaging(cri);
+		return list;
 	}
 	
 	

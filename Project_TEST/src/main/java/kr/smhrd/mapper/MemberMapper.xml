@@ -27,8 +27,9 @@
 	<select id="getMemberListPaging" resultType ="kr.smhrd.domain.MemberVO">
 		
 		<![CDATA[ 
-		SELECT /*INDEX_DESC(user user_board) */ * FROM (SELECT rownum AS rn, id, name, nick, email, address, indate, phone, pw, ad_ck  
-		FROM T_MEMBER WHERE rownum <= #{pageNum} * #{amount}) WHERE rn  > (#{pageNum} -1) * #{amount} 
+		SELECT /*+INDEX_DESC(user user_board) */ * FROM (SELECT rownum AS rn, idx, id, name, nick, email, address, indate, phone, pw, ad_ck  
+		FROM T_MEMBER WHERE rownum <= #{pageNum} * #{amount}) 
+		WHERE rn  > (#{pageNum} -1) * #{amount} 
 		]]>
 		
 	</select>

@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Servlet"/>
+		<item key="selection" value="Home"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="servlet"/>
-			<item value="hikari"/>
-			<item value="spring-test"/>
-			<item value="    //이메일 정규식 체크"/>
-			<item value="body"/>
+			<item value="Home"/>
 			<item value="Login"/>
-			<item value="MemberService"/>
-			<item value="Join"/>
-			<item value="Joinf"/>
-			<item value="글쓰기"/>
-			<item value="id"/>
-			<item value="lombok"/>
-			<item value="form"/>
-			<item value="삭제"/>
-			<item value="list"/>
+			<item value="결제하기"/>
+			<item value="main3"/>
+			<item value=".carousel "/>
+			<item value="carousel "/>
+			<item value="col"/>
+			<item value="bottom: unset"/>
+			<item value="sub-c"/>
+			<item value="sub"/>
+			<item value="제품 구매"/>
+			<item value="제품구매"/>
+			<item value="로그인"/>
+			<item value="Edit"/>
+			<item value="hidden"/>
 		</list>
 		<list key="replacehistory">
+			<item value="BoardPageMaker"/>
 			<item value="memberService"/>
 			<item value="service"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="457"/>
-		<item key="DIALOG_Y_ORIGIN" value="263"/>
+		<item key="DIALOG_X_ORIGIN" value="353"/>
+		<item key="DIALOG_Y_ORIGIN" value="362"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\eGovFrameDev-4.0.0-64bit\workspace\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\eGovFrameDev-4.0.0-64bit\workspace\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Project_TEST" path="/TEST" reloadable="true" source="org.eclipse.jst.jee.server:Project_TEST"/><Context docBase="C:\eGovFrameDev-4.0.0-64bit\workspace\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SSookSSoook" path="/SS" reloadable="true" source="org.eclipse.jst.jee.server:SSookSSoook"/></Host>
+      <Context docBase="C:\eGovFrameDev-4.0.0-64bit\workspace\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\eGovFrameDev-4.0.0-64bit\workspace\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SSookSSoook" path="/SS" reloadable="true" source="org.eclipse.jst.jee.server:SSookSSoook"/></Host>
     </Engine>
   </Service>
 </Server>

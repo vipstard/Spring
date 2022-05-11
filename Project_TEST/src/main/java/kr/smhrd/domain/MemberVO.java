@@ -7,6 +7,7 @@ import lombok.ToString;
 @Data
 public class MemberVO {
 	private int rn;
+	private int idx;
 	private String id;
 	private String name;
 	private String pw;

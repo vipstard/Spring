@@ -16,7 +16,7 @@
 <body>
 
 <%
-	Board vo = (Board)request.getAttribute("vo");
+Board vo = (Board)request.getAttribute("vo");
 %>
 <div class="container">
   <h2>Spring WEB MVC 게시판</h2>

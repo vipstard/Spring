@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 import kr.smhrd.domain.Criteria;
+import kr.smhrd.domain.MemberVO;
 import kr.smhrd.mapper.MemberMapper;
 import kr.smhrd.service.MemberService;
 
@@ -22,7 +23,7 @@ public class BoardMapperTests {
      private static final Logger log = LoggerFactory.getLogger(BoardMapperTests.class);
      
      @Autowired
-     private MemberService memberMapper;
+     private MemberService service;
      
      
      
@@ -32,7 +33,7 @@ public class BoardMapperTests {
          
          Criteria cri = new Criteria();
          
-         List list = memberMapper.getMemberListPaging(cri);
+         List<MemberVO> list = service.getMemberListPaging(cri);
          
          list.forEach(Member -> log.info("" + Member));
      }
